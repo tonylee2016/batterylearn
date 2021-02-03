@@ -26,5 +26,6 @@
 ## Available features
 
 ### Flywheel Stress analysis
+### Flywheel dynamics
 ### Magnetic bearing modeling and control
 ### Motor/generator modeling and control
