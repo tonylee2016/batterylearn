@@ -19,7 +19,7 @@ class flywheel:
            M[3,3]: m: flywheel mass
            M[4,4]: m: flywheel mass
        x0 : numpy array (default: None)
-            intial states must be 5x1.
+            intial states must be 1x5.
        Attributes
        ----------
        x : numpy.ndarray.
@@ -57,8 +57,8 @@ class flywheel:
             self.M = M
 
         if not x0:
-            self.x = np.zeros(len(K), 1)
-        elif x0.shape == (len(K), 1):
+            self.x = np.zeros((len(K),))
+        elif x0.shape == (len(K),):
             self.x = x0
         else:
             ValueError('intial condition must be Nx1 and have the same dimension as the KCM')
@@ -73,9 +73,10 @@ class flywheel:
     def ode(self,
             t,
             x,
-            f=np.zeros(5, 1)):
+            f=np.zeros((5, 1))
+            ):
 
-        dx = np.zeros(10, 1)
+        dx = np.zeros((10,))
 
         dx[0] = x[5]
         dx[1] = x[6]
@@ -88,5 +89,5 @@ class flywheel:
         dx[7] = 1 / self.M[2, 2] * (f[2] - self.K[2, 2]*x[2])
         dx[8] = 1 / self.M[3, 3] * (f[3] - self.K[3, 3]*x[3])
         dx[9] = 1 / self.M[4, 4] * (f[4] - self.K[4, 4]*x[4])
-        
+
         return dx
