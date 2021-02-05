@@ -1,5 +1,5 @@
 from pyfess.models import flywheel
-from pyfess.solvers import ivp
+from pyfess.utilities import ivp
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -18,7 +18,7 @@ fw = flywheel(K, C, M, w0=50.0)
 v_t = np.arange(0, 10, 0.001)
 x0 = np.array([0.1, 0.1, 0.1, 0.1, 0.1, 0, 0, 0, 0, 0])
 
-sol = ivp(fw.nlode, x0=x0, v_t=v_t)
+sol = ivp(fw.ode, x0=x0, v_t=v_t)
 
 plt.plot(sol.t, np.transpose(sol.y[:2, ]))
 plt.legend(['thetax', 'thetay', 'x', 'y', 'z'])
