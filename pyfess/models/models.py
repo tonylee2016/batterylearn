@@ -56,25 +56,44 @@ class flywheel:
             self.C = C
             self.M = M
 
+            Eye = np.diag([1] * 5)
+            self.A = np.zeros((10, 10))
+            self.A[:5, :5] = self.C
+            self.A[5:, :5] = self.M
+            self.A[:5, 5:] = Eye
+
+            self.B = np.zeros((10, 10))
+            self.B[:5, :5] = self.K
+            self.B[5:, 5:] = -Eye
+
         if not x0:
             self.x = np.zeros((len(K),))
         elif x0.shape == (len(K),):
             self.x = x0
         else:
-            ValueError('intial condition must be Nx1 and have the same dimension as the KCM')
+            raise ValueError('intial condition must be Nx1 and have the same dimension as the KCM')
 
         if not w0:
             self.w = 0
         elif isinstance(w0, float) and w0 > 0:
             self.w = w0
         else:
-            ValueError('intial spinning speed must float and positive')
+            raise ValueError('intial spinning speed must float and positive')
 
-    def ode(self,
-            t,
-            x,
-            f=np.zeros((5, 1))
-            ):
+    def lode(self,
+             t,
+             x,
+             ):
+
+        dx = - np.linalg.inv(self.A).dot(self.B.dot(x))
+
+        return dx
+
+    def nlode(self,
+              t,
+              x,
+              f=np.zeros((5, 1))
+              ):
 
         dx = np.zeros((10,))
 
@@ -84,10 +103,10 @@ class flywheel:
         dx[3] = x[8]
         dx[4] = x[9]
 
-        dx[5] = 1 / self.M[0, 0] * (f[0] - self.C[1, 0]*x[6] - self.K[0, 0]*x[0])
-        dx[6] = 1 / self.M[1, 1] * (f[1] - self.C[0, 1]*x[5] - self.K[1, 1]*x[1])
-        dx[7] = 1 / self.M[2, 2] * (f[2] - self.K[2, 2]*x[2])
-        dx[8] = 1 / self.M[3, 3] * (f[3] - self.K[3, 3]*x[3])
-        dx[9] = 1 / self.M[4, 4] * (f[4] - self.K[4, 4]*x[4])
+        dx[5] = 1 / self.M[0, 0] * (f[0] - self.C[1, 0] * self.w * x[6] - self.K[0, 0] * x[0])
+        dx[6] = 1 / self.M[1, 1] * (f[1] - self.C[0, 1] * self.w * x[5] - self.K[1, 1] * x[1])
+        dx[7] = 1 / self.M[2, 2] * (f[2] - self.K[2, 2] * x[2])
+        dx[8] = 1 / self.M[3, 3] * (f[3] - self.K[3, 3] * x[3])
+        dx[9] = 1 / self.M[4, 4] * (f[4] - self.K[4, 4] * x[4])
 
         return dx
