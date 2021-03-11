@@ -59,12 +59,13 @@ class flywheel(mechanical):
         else:
             raise ValueError('intial spinning speed must float and positive')
 
-    def ode(self, **kwargs):
+    def ode(self, t, x, **kwargs):
 
-        if not kwargs['in']:
+        if not kwargs:
             f = np.zeros((self.dim, 1))
 
         dx = np.zeros((10,))
+        self.x = x
 
         dx[0] = self.x[5]
         dx[1] = self.x[6]
