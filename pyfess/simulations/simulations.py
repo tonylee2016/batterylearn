@@ -10,7 +10,7 @@ class simulation:
         self.elements = []
         self.elements_pairs = []
 
-    def add(self, element: elm.dynamical):
+    def add(self, element: elm.Dynamical):
         self.elements.append(element)
 
     def pair(self, pair_setting: tuple):

@@ -3,7 +3,7 @@ from abc import abstractmethod, ABC
 import numpy as np
 
 
-class dynamical:
+class Dynamical:
 
     def __init__(self, dimension: int = None, x0=None):
         if x0:
@@ -25,13 +25,13 @@ class dynamical:
         self.x = x
 
 
-class linear_time_invariant(dynamical):
+class LinearTimeInvariant(Dynamical):
     def __init__(self, A, B, C=None, D=None, x0=None):
         self.A = A
         self.B = B
         self.C = C
         self.D = D
-        super(linear_time_invariant, self).__init__(len(A), x0)
+        super(LinearTimeInvariant, self).__init__(len(A), x0)
 
     def ode(self, **kwargs):
         dx = - np.linalg.inv(self.A).dot(self.B.dot(self.x))
@@ -44,13 +44,12 @@ class linear_time_invariant(dynamical):
         return dx
 
 
-class Nonlinear_sys:
+class NonlinearSystem:
+    # todo: implement basic nonlinear system
     pass
 
 
-# todo: implement basic nonlinear system
-
-class mechanical(dynamical):
+class Mechanical(Dynamical):
     def __init__(self, K, C, M, x0=None):
 
         if K.shape != C.shape or K.shape != M.shape:
@@ -69,7 +68,7 @@ class mechanical(dynamical):
         pass
 
 
-class lin_mechanical(linear_time_invariant):
+class LinearMechanical(LinearTimeInvariant):
 
     def __init__(self, K, C, M, x0=None):
         if K.shape != C.shape or K.shape != M.shape:
@@ -90,3 +89,44 @@ class lin_mechanical(linear_time_invariant):
             B[5:, 5:] = -Eye
 
         super().__init__(A=A, B=B)
+
+
+class Magnetic:
+    """ the basic class for magnetic element.
+           Parameters
+           ----------
+           mu : relative permeability
+            C : numpy array
+               damping matrix, must be 5x5.
+               C[1,0]: I_p: primary moment of inertia
+               C[0,1]: I_p: primary moment of inertia
+           M : numpy array
+               inertial matrix, must be 5x5.
+               M[0,0]: I_t: transversal moment of inertia
+               M[1,1]: I_t: transversal moment of inertia
+               M[2,2]: m: flywheel mass
+               M[3,3]: m: flywheel mass
+               M[4,4]: m: flywheel mass
+           x0 : numpy array (default: None)
+                intial states must be 1x5.
+           Attributes
+           ----------
+           x : numpy.ndarray.
+               internal states, Nx1.
+               x[0]:\theta_x
+               x[1]:\theta_y
+               x[2]:x
+               x[3]:y
+               x[4]:z
+           Notes
+           -----
+               wip.
+           Examples
+           --------
+           >>> wip
+            References
+            ----------
+            ..  Li, Xiaojun & Palazzolo, Alan. Multi‐Input‐Multi‐Output Control of a Utility‐Scale,
+             Shaftless Energy Storage Flywheel with a 5‐DOF Combination Magnetic Bearing.
+             Journal of Dynamic Systems, Measurement, and Control 2018.
+        """

@@ -1,8 +1,8 @@
 import numpy as np
-from pyfess.elements import mechanical
+from pyfess.elements import Mechanical
 
 
-class flywheel(mechanical):
+class flywheel(Mechanical):
     """flywheel model class.
        Parameters
        ----------
