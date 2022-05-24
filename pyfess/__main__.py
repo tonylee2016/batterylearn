@@ -1,4 +1,4 @@
-"""Entry point for PyFESS."""
+"""Entry point for pyfess."""
 
 from .cli import main  # pragma: no cover
 

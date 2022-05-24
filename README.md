@@ -1,6 +1,6 @@
 <!-- Our title -->
 <div align="center">
-  <h3>PyFess</h3>
+  <h3>pyfess</h3>
 </div>
 
 <!-- Short description -->

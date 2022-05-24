@@ -1,7 +1,4 @@
-from abc import abstractmethod, ABC
-
-import numpy as np
-from abc import abstractmethod, ABC
+from abc import ABC, abstractmethod
 
 import numpy as np
 from ahkab.circuit import Circuit

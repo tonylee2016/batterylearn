@@ -1,4 +1,4 @@
-"""CLI interface for PyFESS project.
+"""CLI interface for pyfess project.
 
 Be creative! do whatever you want!
 
@@ -12,7 +12,7 @@ Be creative! do whatever you want!
 def main():  # pragma: no cover
     """
     The main function executes on commands:
-    `python -m PyFESS` and `$ PyFESS `.
+    `python -m pyfess` and `$ pyfess `.
 
     This is your program's entry point.
 
