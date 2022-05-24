@@ -2,7 +2,7 @@ import numpy as np
 from pyfess.elements import Mechanical
 
 
-class flywheel(Mechanical):
+class Flywheel(Mechanical):
     """flywheel model class.
        Parameters
        ----------
@@ -85,7 +85,7 @@ class flywheel(Mechanical):
     #     if isinstance(obj,magnetic_bearing):
 
 
-class magnetic_bearing:
+class MagneticBearing:
     """flywheel model class.
        Parameters
        ----------
