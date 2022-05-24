@@ -1,4 +1,4 @@
-"""Python setup.py for pyfw package"""
+"""Python setup.py for PyFESS package"""
 import io
 import os
 from setuptools import find_packages, setup
@@ -6,7 +6,7 @@ from setuptools import find_packages, setup
 
 def read(*paths, **kwargs):
     """Read the contents of a text file safely.
-    >>> read("pyfw", "VERSION")
+    >>> read("PyFESS", "VERSION")
     '0.1.0'
     >>> read("README.md")
     ...
@@ -30,9 +30,9 @@ def read_requirements(path):
 
 
 setup(
-    name="pyfw",
-    version=read("pyfw", "VERSION"),
-    description="Awesome pyfw created by tonylee2016",
+    name="PyFESS",
+    version=read("PyFESS", "VERSION"),
+    description=" PyFESS created by tonylee2016",
     url="https://github.com/tonylee2016/PyFESS/",
     long_description=read("README.md"),
     long_description_content_type="text/markdown",
@@ -40,7 +40,7 @@ setup(
     packages=find_packages(exclude=["tests", ".github"]),
     install_requires=read_requirements("requirements.txt"),
     entry_points={
-        "console_scripts": ["pyfw = pyfw.__main__:main"]
+        "console_scripts": ["PyFESS = PyFESS.__main__:main"]
     },
     extras_require={"test": read_requirements("requirements-test.txt")},
 )
