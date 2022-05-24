@@ -5,7 +5,6 @@ from ahkab.circuit import Circuit
 
 
 class Dynamical:
-
     def __init__(self, dimension: int = None, x0=None):
         if x0:
             self.x = x0
@@ -35,7 +34,7 @@ class LinearTimeInvariant(Dynamical):
         super(LinearTimeInvariant, self).__init__(len(A), x0)
 
     def ode(self, **kwargs):
-        dx = - np.linalg.inv(self.A).dot(self.B.dot(self.x))
+        dx = -np.linalg.inv(self.A).dot(self.B.dot(self.x))
 
         return dx
 
@@ -54,7 +53,9 @@ class Mechanical(Dynamical):
     def __init__(self, K, C, M, x0=None):
 
         if K.shape != C.shape or K.shape != M.shape:
-            ValueError('the input K-C-M parameters should have the same dimension')
+            ValueError(
+                "the input K-C-M parameters should have the same dimension"
+            )
         else:
             self.K = K
             self.C = C
@@ -70,10 +71,11 @@ class Mechanical(Dynamical):
 
 
 class LinearMechanical(LinearTimeInvariant):
-
     def __init__(self, K, C, M, x0=None):
         if K.shape != C.shape or K.shape != M.shape:
-            ValueError('the input K-C-M parameters should have the same dimension')
+            ValueError(
+                "the input K-C-M parameters should have the same dimension"
+            )
         else:
             self.K = K
             self.C = C
@@ -93,7 +95,6 @@ class LinearMechanical(LinearTimeInvariant):
 
 
 class Dynamical:
-
     def __init__(self, dimension: int = None, x0=None):
         if x0:
             self.x = x0
@@ -123,7 +124,7 @@ class LinearTimeInvariant(Dynamical):
         super(LinearTimeInvariant, self).__init__(len(A), x0)
 
     def ode(self, **kwargs):
-        dx = - np.linalg.inv(self.A).dot(self.B.dot(self.x))
+        dx = -np.linalg.inv(self.A).dot(self.B.dot(self.x))
 
         return dx
 
@@ -142,7 +143,9 @@ class Mechanical(Dynamical):
     def __init__(self, K, C, M, x0=None):
 
         if K.shape != C.shape or K.shape != M.shape:
-            ValueError('the input K-C-M parameters should have the same dimension')
+            ValueError(
+                "the input K-C-M parameters should have the same dimension"
+            )
         else:
             self.K = K
             self.C = C
@@ -158,10 +161,11 @@ class Mechanical(Dynamical):
 
 
 class LinearMechanical(LinearTimeInvariant):
-
     def __init__(self, K, C, M, x0=None):
         if K.shape != C.shape or K.shape != M.shape:
-            ValueError('the input K-C-M parameters should have the same dimension')
+            ValueError(
+                "the input K-C-M parameters should have the same dimension"
+            )
         else:
             self.K = K
             self.C = C
@@ -181,32 +185,32 @@ class LinearMechanical(LinearTimeInvariant):
 
 
 class Magnetic(Circuit):
-    """ the basic class for magnetic circuit.
-           Parameters
-           ----------
-           mu : relative permeability
-            C : numpy array
-               damping matrix, must be 5x5.
-               C[1,0]: I_p: primary moment of inertia
-               C[0,1]: I_p: primary moment of inertia
-           R : numpy array
-               inertial matrix, must be 5x5.
-           mmf : numpy array (default: None)
-                intial states must be 1x5.
-           Attributes
-           ----------
-           x : numpy.ndarray.
-           Notes
-           -----
-               wip.
-           Examples
-           --------
-           >>> wip
-            References
-            ----------
-            ..  A Combination 5-DOF Active Magnetic Bearing For Energy Storage Flywheel,
-                Xiaojun Li and Alan Palazzolo and Zhiyang Wang, 2021, arXiv:2103.08004.
-        """
+    """the basic class for magnetic circuit.
+    Parameters
+    ----------
+    mu : relative permeability
+     C : numpy array
+        damping matrix, must be 5x5.
+        C[1,0]: I_p: primary moment of inertia
+        C[0,1]: I_p: primary moment of inertia
+    R : numpy array
+        inertial matrix, must be 5x5.
+    mmf : numpy array (default: None)
+         intial states must be 1x5.
+    Attributes
+    ----------
+    x : numpy.ndarray.
+    Notes
+    -----
+        wip.
+    Examples
+    --------
+    >>> wip
+     References
+     ----------
+     ..  A Combination 5-DOF Active Magnetic Bearing For Energy Storage Flywheel,
+         Xiaojun Li and Alan Palazzolo and Zhiyang Wang, 2021, arXiv:2103.08004.
+    """
 
     def __init__(self, title):
         super().__init__(title)

@@ -19,14 +19,15 @@ class simulation:
 
         for j in pair_setting:
             if j not in self.elements.index():
-                raise ValueError('pair setting pointing to an element that does not exist !')
+                raise ValueError(
+                    "pair setting pointing to an element that does not exist !"
+                )
 
         self.elements_pairs.append(pair_setting)
 
-    #todo: implement a dynamical system connection method
+    # todo: implement a dynamical system connection method
 
     # def prepare_sim(self,
     #                 x,):
     #     for pair in self.elements_pairs:
     #         # data flow pair[0]->pair[1]
-
