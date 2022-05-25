@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
-from pyfess.models import Flywheel
-from pyfess.utilities import ivp
+from pyess.models import Flywheel
+from pyess.utilities import ivp
 
 
 def test_flywheel_base():
@@ -33,6 +33,7 @@ def test_flywheel_base():
     plt.legend(["thetax", "thetay", "x", "y", "z"])
     plt.show()
     plt.plot()
+
 
 def test_flywheel_model_with_bearing():
     pass

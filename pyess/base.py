@@ -1,7 +1,7 @@
 """
-pyfess base module.
+pyess base module.
 
-This is the principal module of the pyfess project.
+This is the principal module of the pyess project.
 here you put your main classes and objects.
 
 Be creative! do whatever you want!
@@ -14,4 +14,4 @@ and then choose `flask` as template.
 """
 
 # example constant variable
-NAME = "pyfess"
+NAME = "pyess"

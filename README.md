@@ -1,11 +1,11 @@
 <!-- Our title -->
 <div align="center">
-  <h3>pyfess</h3>
+  <h3>pyess</h3>
 </div>
 
 <!-- Short description -->
 <p align="center">
-   Python based Flywheel Energy Storage System Simulator
+   Python based Energy Storage Simulator
 </p>
 
 <!-- Draw horizontal rule -->
@@ -25,7 +25,9 @@
 
 ## Available features
 
-### Flywheel Stress analysis
+### Flywheel Stress analysis (WIP)
 ### Flywheel dynamics
-### Magnetic bearing modeling and control
-### Motor/generator modeling and control
+### Battery Modeling
+### Battery Control
+### Magnetic bearing modeling and control (WIP)
+### Motor/generator modeling and control (WIP)

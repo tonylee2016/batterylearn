@@ -1,0 +1,561 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"s",
+				"sys"
+			],
+			[
+				"ra",
+				"radius"
+			],
+			[
+				"Bat",
+				"BatterySim"
+			],
+			[
+				"Ba",
+				"BatterySim"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/Users/tonyli/Documents/GitHub/pyfess/.gitignore",
+			"settings":
+			{
+				"buffer_size": 1159,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					""
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Traditional"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"PdfLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"XeLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"LuaLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - PdfLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - XeLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - LuaLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Script Builder"
+				],
+				[
+					"Packages/User/arara.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/LaTeXTools/LaTeX.sublime-build",
+				"PdfLaTeX"
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"ter",
+				"Terminal: Open"
+			],
+			[
+				"lin",
+				"SublimeLinter: Show All Errors"
+			],
+			[
+				"li",
+				"SublimeLinter: Show All Errors"
+			],
+			[
+				"package",
+				"Package Control: Remove Package"
+			],
+			[
+				"pa",
+				"Package Control: Install Package"
+			],
+			[
+				"p",
+				"Package Control: List Packages"
+			],
+			[
+				"sub",
+				"Preferences: SublimeLinter Settings"
+			],
+			[
+				"su",
+				"Preferences: SublimeLinter Settings"
+			],
+			[
+				"package control",
+				"Package Control: List Packages"
+			],
+			[
+				"ya",
+				"PyYapf: Format Document"
+			],
+			[
+				"form",
+				"PyYapf: Format Document"
+			],
+			[
+				"for",
+				"PyYapf: Format Document"
+			],
+			[
+				"t",
+				"Terminal: Open"
+			],
+			[
+				"forma",
+				"PyYapf: Format Document"
+			],
+			[
+				"package contro",
+				"Package Control: List Packages"
+			],
+			[
+				"pack",
+				"Package Control: Remove Package"
+			],
+			[
+				"flake",
+				"User: Python Flake8 Lint"
+			],
+			[
+				"package co",
+				"Package Control: Install Package"
+			],
+			[
+				"package control:ins",
+				"Package Control: Install Package"
+			],
+			[
+				"linter",
+				"Preferences: SublimeLinter Key Bindings"
+			],
+			[
+				"clang",
+				"Package Control: Install Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"sublime",
+				"Preferences: SublimeLinter Settings"
+			],
+			[
+				"pakcage",
+				"Package Control: List Packages"
+			],
+			[
+				"sublim",
+				"Preferences: SublimeLinter Settings"
+			],
+			[
+				"sublimeli",
+				"Preferences: SublimeLinter Settings"
+			],
+			[
+				"sublime l",
+				"Preferences: SublimeLinter Settings"
+			],
+			[
+				"post",
+				"Package Control: Satisfy Dependencies"
+			],
+			[
+				"clean",
+				"LaTeXTools: Clear document cache"
+			],
+			[
+				"pdf",
+				"LaTeXTools: Jump to PDF"
+			],
+			[
+				"map",
+				"CodeMap: Render From View"
+			],
+			[
+				"term",
+				"Terminal: Open"
+			],
+			[
+				"codemap",
+				"CodeMap: Toggle Visibility"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 195.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/tonyli/Documents/GitHub/pyess"
+	],
+	"file_history":
+	[
+		"/Users/tonyli/Documents/GitHub/pyfess/pyfess/simulations/__init__.py",
+		"/Users/tonyli/Documents/GitHub/pyfess/mkdocs.yml",
+		"/Users/tonyli/Documents/GitHub/pyfess/Makefile",
+		"/Users/tonyli/Documents/GitHub/pyfess/CONTRIBUTING.md",
+		"/Users/tonyli/Documents/GitHub/pyfess/Containerfile",
+		"/Users/tonyli/Documents/GitHub/pyfess/pyfess/cli.py",
+		"/Users/tonyli/Documents/GitHub/pyfess/pyfess/base.py",
+		"/Users/tonyli/Documents/GitHub/pyfess/pyfess/__main__.py",
+		"/Users/tonyli/Documents/GitHub/pyfess/setup.py",
+		"/Users/tonyli/Documents/GitHub/pyfess/README.md",
+		"/Users/tonyli/Documents/GitHub/pyfess/pyfess/pyfess.sublime-project",
+		"/Users/tonyli/Documents/GitHub/pyfess/pyfess/elements/elements.py",
+		"/Users/tonyli/Documents/GitHub/pyfess/pyfess/models/models.py",
+		"/Users/tonyli/Documents/GitHub/pyfess/pyfess/simulations/simulations.py",
+		"/Users/tonyli/Documents/GitHub/pyfess/tests/test_base.py",
+		"/Users/tonyli/Documents/GitHub/pyfess/requirements-test.txt",
+		"/Users/tonyli/Documents/GitHub/pyfess/pyfess/elements/__init__.py",
+		"/Users/tonyli/Documents/GitHub/pyfess/pyfess/pyfess.sublime-workspace",
+		"/Users/tonyli/Documents/GitHub/pyfw/README.md",
+		"/Users/tonyli/Documents/GitHub/pyfw/pyfw/__init__ 2.py",
+		"/Users/tonyli/Documents/GitHub/pyfw/ABOUT_THIS_TEMPLATE.md",
+		"/Users/tonyli/Documents/GitHub/pyfw/.github/FUNDING.yml",
+		"/Users/tonyli/Documents/GitHub/batterydata/.github/workflows/main.yml",
+		"/Users/tonyli/Documents/GitHub/batterydata/batterydata/__init__.py",
+		"/Users/tonyli/Documents/GitHub/batterydata/batterydata/GotionMySql.py",
+		"/Users/tonyli/Documents/GitHub/batterydata/requirements.txt",
+		"/Users/tonyli/Documents/papers/gotion-energy-iot-book/latex_code copy/references.bib",
+		"/Users/tonyli/Documents/papers/gotion-energy-iot-book/latex_code copy/elsarticle-template.tex",
+		"/Users/tonyli/Documents/papers/gotion-energy-iot-book/latex_code copy/elsarticle-template.bbl",
+		"/Users/tonyli/Documents/gitlab/asw_gen2/LowLevel_Delivery/RingModels/VB/CLBR/inc/CLBR_Code.h",
+		"/Users/tonyli/Documents/gitlab/asw_gen2/LowLevel_Delivery/RingModels/VB/CSCR/snapshot.txt",
+		"/Users/tonyli/Documents/gitlab/asw_gen2/Analysis/Static_Analysis/Library/Rte_Type.h",
+		"/Users/tonyli/Documents/gitlab/asw_gen2/LowLevel_Delivery/ComponentModels/qsort/ASW_qsort.c",
+		"/Users/tonyli/Documents/gitlab/asw_gen2/LowLevel_Delivery/RingModels/VB/GCFR/src/GCFR_Code.c",
+		"/Users/tonyli/Documents/gitlab/asw_gen2/LowLevel_Delivery/RingModels/VB/GCFR/inc/GCFR_Code.h",
+		"/Users/tonyli/Documents/gitlab/asw_gen2/LowLevel_Delivery/RingModels/VB/ISLR/inc/ISLR_Code.h",
+		"/Users/tonyli/Documents/gitlab/asw_gen2/Analysis/Static_Analysis/Library/Platform_Types.h",
+		"/Users/tonyli/Documents/gitlab/asw_gen2/SimulationModels/IntegrationModels/library/Ifl.c",
+		"/Users/tonyli/Documents/gitlab/asw_gen2/Analysis/Static_Analysis/Library/math/Ifl.c",
+		"/Users/tonyli/Documents/gitlab/asw_gen2/SimulationModels/IntegrationModels/library/Mfl.c",
+		"/Users/tonyli/Documents/gitlab/asw_gen2/LowLevel_Delivery/RingModels/VB/CLBR/src/CLBR_Code_QSorti_HybdSPYL.c",
+		"/Users/tonyli/Downloads/quicksort.m/quicksort.m",
+		"/Users/tonyli/Documents/gitlab/asw_gen2/LowLevel_Delivery/RingModels/VB/DHSR/inc/DHSR_Code_private.h",
+		"/Users/tonyli/Documents/gitlab/asw_gen2/LowLevel_Delivery/RingModels/VB/DHSR/src/DHSR_Code.c",
+		"/Users/tonyli/Documents/gitlab/asw_gen2/LowLevel_Delivery/RingModels/VB/DHSR/snapshot.txt",
+		"/Users/tonyli/Documents/gitlab/asw_gen2/LowLevel_Delivery/RingModels/VB/SOCR/snapshot.txt",
+		"/Users/tonyli/Documents/gitlab/asw_gen2/LowLevel_Delivery/RingModels/VB/CFLR/snapshot.txt",
+		"/Users/tonyli/Documents/gitlab/asw_gen2/LowLevel_Delivery/RingModels/VB/CPLR/snapshot.txt",
+		"/Users/tonyli/Documents/gitlab/asw_gen2/LowLevel_Delivery/RingModels/VB/CLBR/snapshot.txt",
+		"/Users/tonyli/Documents/gitlab/asw_gen2/LowLevel_Delivery/RingModels/VB/THMR/src/THMR_Code_look1_binlca.c",
+		"/Users/tonyli/Documents/gitlab/asw_gen2/LowLevel_Delivery/RingModels/VB/HVIR/src/HVIR_Code.c",
+		"/Users/tonyli/Documents/gitlab/asw_gen2/LowLevel_Delivery/RingModels/VB/SOCR/src/SOCR_Code.c",
+		"/Users/tonyli/Documents/gitlab/asw_gen2/LowLevel_Delivery/RingModels/VB/CLBR/src/const_params.c",
+		"/Users/tonyli/Documents/gitlab/asw_gen2/LowLevel_Delivery/RingModels/VB/CLBR/inc/CLBR_Code_private.h",
+		"/Users/tonyli/Documents/gitlab/asw_gen2/LowLevel_Delivery/RingModels/VB/CHMR/snapshot.txt",
+		"/Users/tonyli/Documents/gitlab/asw_gen2/LowLevel_Delivery/RingModels/VB/VSDR/snapshot.txt",
+		"/Users/tonyli/Documents/gitlab/asw_gen2/LowLevel_Delivery/RingModels/VB/ISLR/snapshot.txt",
+		"/Users/tonyli/Documents/gitlab/asw_gen2/LowLevel_Delivery/RingModels/VB/SOHR/snapshot.txt",
+		"/Users/tonyli/Documents/gitlab/asw_gen2/LowLevel_Delivery/RingModels/VB/SOCR/arxml/SOCR_Code_component.arxml",
+		"/Users/tonyli/Documents/gitlab/asw_gen2/LowLevel_Delivery/RingModels/VB/SOHR/src/SOHR_Code.c",
+		"/Users/tonyli/Documents/gitlab/asw_gen2/LowLevel_Delivery/RingModels/VB/CLBR/src/CLBR_Code.c",
+		"/Users/tonyli/Downloads/RteErr.xml",
+		"/Users/tonyli/Documents/gitlab/asw_gen2/LowLevel_Delivery/RingModels/VB/ADPR/snapshot.txt",
+		"/Users/tonyli/Documents/gitlab/asw_gen2/LowLevel_Delivery/RingModels/VB/ADPR/arxml/ADPR_Code_component.arxml",
+		"/Users/tonyli/Documents/gitlab/asw_gen2/LowLevel_Delivery/RingModels/CA/CPLR/snapshot.txt",
+		"/Users/tonyli/Documents/gitlab/asw_gen2/LowLevel_Delivery/RingModels/VB/CPLR/arxml/CPLR_Code_interface.arxml",
+		"/Users/tonyli/Documents/GitHub/starter-hugo-portfolio-theme-xjl/content/publication/data-driven-thermal-anomaly-detection-for-batteries-using-unsupervised-shape-clustering/cite.bib",
+		"/Users/tonyli/Documents/GitHub/starter-hugo-portfolio-theme-xjl/content/publication/soc_paper2/cite.bib",
+		"/Users/tonyli/Downloads/My Collection.bib",
+		"/Users/tonyli/Documents/GitHub/starter-hugo-portfolio-theme-xjl/content/post/quote1/index.md",
+		"/Users/tonyli/Documents/GitHub/starter-hugo-portfolio-theme-xjl/content/post/_index.md",
+		"/Users/tonyli/Documents/GitHub/starter-hugo-portfolio-theme-xjl/content/publication/_index.md",
+		"/Users/tonyli/Documents/GitHub/starter-hugo-portfolio-theme-xjl/config/_default/params.yaml",
+		"/Users/tonyli/Documents/GitHub/starter-hugo-portfolio-theme-xjl/config/_default/config.yaml",
+		"/Users/tonyli/Documents/GitHub/starter-hugo-portfolio-theme-xjl/config/_default/menus.yaml",
+		"/Users/tonyli/Documents/GitHub/starter-hugo-portfolio-theme-xjl/content/authors/admin/_index.md",
+		"/Users/tonyli/Documents/GitHub/starter-hugo-portfolio-theme-xjl/content/post/presentations/index.md",
+		"/Users/tonyli/Documents/GitHub/starter-hugo-portfolio-theme-xjl/content/project_recent/SOC/index.md",
+		"/Users/tonyli/Documents/GitHub/starter-hugo-portfolio-theme-xjl/content/project_recent/thermal/index.md",
+		"/Users/tonyli/Documents/GitHub/starter-hugo-portfolio-theme-xjl/content/project_recent/SOH/index.md",
+		"/Users/tonyli/Documents/GitHub/starter-hugo-portfolio-theme-xjl/content/publication/a-review-of-flywheel-energy-storage-systems-state-of-the-art-and-opportunities/index.md",
+		"/Users/tonyli/Documents/GitHub/starter-hugo-portfolio-theme-xjl/content/post/interpretable-machine-learning/index.md",
+		"/Users/tonyli/Documents/GitHub/starter-hugo-portfolio-theme-xjl/content/publication/soc_paper2/index.md",
+		"/Users/tonyli/Documents/GitHub/starter-hugo-portfolio-theme-xjl/content/about/accomplishments.md",
+		"/Users/tonyli/Documents/GitHub/starter-hugo-portfolio-theme-xjl/content/about/education.md",
+		"/Users/tonyli/Documents/GitHub/starter-hugo-portfolio-theme-xjl/content/publication/paper1/index.md",
+		"/Users/tonyli/Documents/GitHub/starter-hugo-portfolio-theme-xjl/content/papers/pubs.md",
+		"/Users/tonyli/Documents/GitHub/starter-hugo-portfolio-theme-xjl/content/home/portfolio2.md",
+		"/Users/tonyli/Documents/GitHub/starter-hugo-portfolio-theme-xjl/content/publication/example/index.md",
+		"/Users/tonyli/Documents/GitHub/starter-hugo-portfolio-theme-xjl/content/home/pubs.md",
+		"/Users/tonyli/Documents/GitHub/starter-hugo-portfolio-theme-xjl/content/publication/example/cite.bib",
+		"/Users/tonyli/Documents/GitHub/starter-hugo-portfolio-theme-xjl/content/home/portfolio.md",
+		"/Users/tonyli/Documents/GitHub/starter-hugo-portfolio-theme-xjl/content/project/thermal/index.md",
+		"/Users/tonyli/Documents/GitHub/starter-hugo-portfolio-theme-xjl/content/project/SOH/index.md",
+		"/Users/tonyli/Documents/GitHub/starter-hugo-portfolio-theme-xjl/content/project/SOC/index.md",
+		"/Users/tonyli/Documents/GitHub/starter-hugo-portfolio-theme-xjl/content/project/DataPlatform/index.md",
+		"/Users/tonyli/Documents/GitHub/starter-hugo-portfolio-theme-xjl/content/publications/pubs.md",
+		"/Users/tonyli/Documents/GitHub/starter-hugo-portfolio-theme-xjl/content/project/lvtrc/index.md",
+		"/Users/tonyli/Documents/GitHub/starter-hugo-portfolio-theme-xjl/content/project/fpga/index.md",
+		"/Users/tonyli/Documents/GitHub/starter-hugo-portfolio-theme-xjl/content/publications/papers/paper1/My Collection.bib",
+		"/Users/tonyli/Documents/GitHub/starter-hugo-portfolio-theme-xjl/content/publications/_index.md",
+		"/Users/tonyli/Documents/GitHub/starter-hugo-portfolio-theme-xjl/content/about/about.md",
+		"/Users/tonyli/Documents/GitHub/starter-hugo-portfolio-theme-xjl/content/about/experience.md",
+		"/Users/tonyli/Documents/GitHub/starter-hugo-portfolio-theme-xjl/content/project/flywheel/index.md",
+		"/Users/tonyli/Documents/GitHub/starter-hugo-portfolio-theme-xjl/content/home/intro.md",
+		"/Users/tonyli/Documents/GitHub/starter-hugo-portfolio-theme-xjl/README.md",
+		"/Users/tonyli/Documents/GitHub/playground/test_data/20130919_20130919_PRC_LMP_DAM_20220312_15_28_41_v1.xml",
+		"/Users/tonyli/Documents/IP/gotion-energy-iot-book/AdvancedSOHAlgorithm_DJ.tex",
+		"/Users/tonyli/Dropbox/Apps/Overleaf/gotion-energy-iot-book/elsarticle-template.tex",
+		"/Users/tonyli/Library/Caches/Sublime Text 3/Cache/LaTeXTools/internal/preview_math/09097c7e07f6690b2b84bd375471de8d.png.err",
+		"/Users/tonyli/Downloads/thmr.c",
+		"/Users/tonyli/Library/Application Support/T-Engine/4.0/profiles/online/generic/online.profile",
+		"/Users/tonyli/Documents/gitlab/asw_gen2/start_A2.sublime-workspace",
+		"/Users/tonyli/Downloads/173_extension_with_license_20200319/polarion-Simulink/startup.p",
+		"/Users/tonyli/Dropbox/Apps/Overleaf/A review of flywheel energy storage systems: state-of-the-art and opportunities/reply_letter_2/revision-notes/reviewer3.tex",
+		"/Users/tonyli/Dropbox/Apps/Overleaf/A review of flywheel energy storage systems: state-of-the-art and opportunities/reply_letter_2/letter.tex",
+		"/Users/tonyli/Dropbox/Apps/Overleaf/A review of flywheel energy storage systems: state-of-the-art and opportunities/elsarticle-template_final.tex",
+		"/Users/tonyli/Dropbox/Apps/Overleaf/A review of flywheel energy storage systems: state-of-the-art and opportunities/diff_hilighted.pdf",
+		"/Users/tonyli/Downloads/changanA301-20210716.dbc",
+		"/Users/tonyli/Dropbox/Apps/Overleaf/A review of flywheel energy storage systems: state-of-the-art and opportunities/reply_letter_2/revision-notes/revisionnotes-example.tex",
+		"/Users/tonyli/Dropbox/Apps/Overleaf/A review of flywheel energy storage systems: state-of-the-art and opportunities/reply_letter/revision-notes/reviewer3.tex",
+		"/Users/tonyli/Dropbox/Apps/Overleaf/A review of flywheel energy storage systems: state-of-the-art and opportunities/reply_letter/revision-notes/reviewer2.tex",
+		"/Users/tonyli/Dropbox/Apps/Overleaf/A review of flywheel energy storage systems: state-of-the-art and opportunities/reply_letter/revision-notes/reviewer1.tex",
+		"/Users/tonyli/Dropbox/Apps/Overleaf/A review of flywheel energy storage systems",
+		"/Users/tonyli/Dropbox/Apps/Overleaf/A review of flywheel energy storage systems: state-of-the-art and opportunities/elsarticle-template.pdf",
+		"/Users/tonyli/Dropbox/Apps/Overleaf/A review of flywheel energy storage systems: state-of-the-art and opportunities/reply_letter/letter.tex",
+		"/Users/tonyli/Dropbox/Apps/Overleaf/A review of flywheel energy storage systems: state-of-the-art and opportunities/reply_letter/manuscriptinfo.tex",
+		"/Users/tonyli/Dropbox/Apps/Overleaf/A review of flywheel energy storage systems: state-of-the-art and opportunities/reply_letter/intro.tex"
+	],
+	"find":
+	{
+		"height": 26.0
+	},
+	"find_in_files":
+	{
+		"height": 98.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"pyfess",
+			"setting"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"pyess"
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/Users/tonyli/Documents/GitHub/pyfess/.gitignore",
+					"selected": true,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1159,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/Git Formats/Git Ignore.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"stack_multiselect": false,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 38.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.SublimeLinter":
+	{
+		"height": 126.0
+	},
+	"output.SublimeLinter Messages":
+	{
+		"height": 126.0
+	},
+	"output.exec":
+	{
+		"height": 126.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.latextools":
+	{
+		"height": 147.0
+	},
+	"pinned_build_system": "",
+	"project": "pyfess.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": false,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 216.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

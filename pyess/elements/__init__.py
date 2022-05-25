@@ -2,7 +2,6 @@ from .elements import (
     Dynamical,
     LinearMechanical,
     LinearTimeInvariant,
-    Magnetic,
     Mechanical,
 )
 
@@ -13,5 +12,4 @@ __all__ = [
     "Mechanical",
     "LinearMechanical",
     "Dynamical",
-    "Magnetic",
 ]

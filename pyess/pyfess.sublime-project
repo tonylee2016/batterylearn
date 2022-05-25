@@ -1,0 +1,15 @@
+{
+	"folders":
+	[
+		{
+			"path": "/Users/tonyli/Documents/GitHub/pyess"
+		}
+	],
+
+
+    "settings": {
+
+    	"SublimeLinter.linters.flake8.python":"/Users/tonyli/Documents/GitHub/pyess/venv/bin",
+    	"SublimeLinter.linters.pylint.disable": true,
+    }
+}

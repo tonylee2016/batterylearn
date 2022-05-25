@@ -1,6 +1,6 @@
 import numpy as np
 
-from pyfess.elements import Mechanical
+from pyess.elements import Mechanical
 
 
 class Flywheel(Mechanical):
@@ -51,7 +51,7 @@ class Flywheel(Mechanical):
         super().__init__(K=K, C=C, M=M, x0=x0)
 
         if not w0:
-            self.w = 0
+            self.w = 0.0
         elif isinstance(w0, float) and w0 > 0:
             self.w = w0
         else:
