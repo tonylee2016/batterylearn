@@ -22,17 +22,17 @@ def test_flywheel_base():
 
     sol = ivp(fw.ode, x0=x0, v_t=v_t)
 
-    plt.plot(
-        sol.t,
-        np.transpose(
-            sol.y[
-            :2,
-            ]
-        ),
-    )
-    plt.legend(["thetax", "thetay", "x", "y", "z"])
-    plt.show()
-    plt.plot()
+    # plt.plot(
+    #     sol.t,
+    #     np.transpose(
+    #         sol.y[
+    #         :2,
+    #         ]
+    #     ),
+    # )
+    # # plt.legend(["thetax", "thetay", "x", "y", "z"])
+    # # plt.show()
+    # # plt.plot()
 
 
 def test_flywheel_model_with_bearing():
@@ -47,4 +47,4 @@ def test_ocv_curve():
 
     assert c1.ocv == ocv
     assert c1.soc == soc
-    c1.display()
+    # c1.display()
