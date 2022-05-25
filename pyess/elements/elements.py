@@ -1,8 +1,22 @@
+import logging
 from abc import abstractmethod
 
 import numpy as np
 
 # from ahkab import circuit
+
+
+class Base:
+    def __init__(self, type, name=""):
+        self.name = name
+        self.type = type
+        logging.info(self.name + " of [" + self.type + "] is created")
+
+    def __del__(self):
+        logging.info(self.name + " is deleted")
+
+    def show(self):
+        logging.info(self.name + ' of "' + self.type + '"')
 
 
 class Dynamical:

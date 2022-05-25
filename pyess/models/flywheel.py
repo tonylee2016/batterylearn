@@ -1,9 +1,9 @@
 import numpy as np
 
-from pyess.elements import Mechanical
+from pyess.elements import Base, Mechanical
 
 
-class Flywheel(Mechanical):
+class Flywheel(Mechanical, Base):
     """flywheel model class.
     Parameters
     ----------
@@ -45,10 +45,17 @@ class Flywheel(Mechanical):
     """
 
     def __init__(
-        self, K: np.ndarray, C: np.ndarray, M: np.ndarray, x0=None, w0=None
+        self,
+        K: np.ndarray,
+        C: np.ndarray,
+        M: np.ndarray,
+        x0=None,
+        w0=None,
+        name="",
     ):
 
-        super().__init__(K=K, C=C, M=M, x0=x0)
+        Mechanical.__init__(self, K=K, C=C, M=M, x0=x0)
+        Base.__init__(self, type="Flywheel", name=name)
 
         if not w0:
             self.w = 0.0
