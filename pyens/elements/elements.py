@@ -19,6 +19,18 @@ class Base:
         logging.info(self.name + ' of "' + self.type + '"')
 
 
+class Container:
+    def __init__(self):
+        self.items = dict()
+
+    def attach(self, item: Base):
+        self.items[item.name] = item
+        return self
+
+    def get(self, name):
+        return self.items[name]
+
+
 class Dynamical:
     def __init__(self, dimension: int = None, x0=None):
         if x0:

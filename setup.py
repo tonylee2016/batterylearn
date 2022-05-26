@@ -30,9 +30,9 @@ def read_requirements(path):
 
 
 setup(
-    name="pyens",
+    name="pybattery",
     version=read("pyens", "VERSION"),
-    description=" pyens created by tonylee2016",
+    description=" Python based energy storage simulator",
     url="https://github.com/tonylee2016/pyens/",
     long_description=read("README.md"),
     long_description_content_type="text/markdown",

@@ -1,5 +1,6 @@
 from .elements import (
     Base,
+    Container,
     Dynamical,
     LinearMechanical,
     LinearTimeInvariant,
@@ -14,4 +15,5 @@ __all__ = [
     "LinearMechanical",
     "Dynamical",
     "Base",
+    "Container",
 ]

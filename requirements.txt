@@ -1,6 +1,11 @@
 numpy~=1.20.0
-scipy~=1.6.0
+scipy~=1.8.1
 
 setuptools~=49.6.0
 matplotlib~=3.3.4
 #accessify
+pandas~=1.4.2
+pytest~=7.1.2
+ahkab~=0.18
+sympy~=1.10.1
+tabulate~=0.8.9

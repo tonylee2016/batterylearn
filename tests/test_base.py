@@ -43,7 +43,7 @@ def test_ocv_curve():
     ocv = [3.3, 3.5, 3.55, 3.6, 3.65, 3.68, 3.70, 3.8, 3.95, 4.0, 4.1]
     soc = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
 
-    c1 = OCV(name='curve1', ocv=ocv, soc=soc)
+    c1 = OCV(name="curve1", ocv=ocv, soc=soc)
 
     assert c1.ocv == ocv
     assert c1.soc == soc

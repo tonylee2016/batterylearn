@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-from pyens.elements import Base
+from pyens.elements import Base, Dynamical
 
 
 class OCV(Base):
@@ -22,5 +22,37 @@ class OCV(Base):
         return np.interp(soc, self.soc, self.ocv)
 
 
-class ECMCell(Base):
-    pass
+class EcmCell(Base, Dynamical):
+    def __init__(self, name, parameters: dict):
+        Base.__init__(self, type="EMC_Cell_Model", name=name)
+        Dynamical.__init__(self)
+        self.parameters = parameters
+
+    def ode(self, t, x, current_series):
+
+        current = -(current_series(t))
+
+        # The derivative of SoC
+        if current >= 0:
+            dSoC = -1 / self.parameters["CAP"] * current * 1.0
+        else:
+            dSoC = (
+                -1 / self.parameters["CAP"] * current * self.parameters["ce"]
+            )
+        # The derivative of U1
+        du1 = (
+            1
+            / self.parameters["C1"]
+            * (current - 1 / self.parameters["R1"] * x[1])
+        )
+        # The derivative of U2
+        du2 = (
+            1
+            / self.parameters["C2"]
+            * (current - 1 / self.parameters["R2"] * x[2])
+        )
+
+        return np.array([du1, du2, dSoC])
+
+    def out(self, **kwargs):
+        pass

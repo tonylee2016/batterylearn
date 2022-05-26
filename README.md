@@ -15,7 +15,7 @@
 
 | Section | Description |
 |-|-|
-| [Installation](#installation) | wip |
+| [Installation](#installation) | pip install pyens |
 | [Available features](#available-features) | overview of functionalities |
 | [Documentation](#documentation) | wip |
 | [Contributing](#contributing) | wip |
@@ -25,9 +25,10 @@
 
 ## Available features
 
-### Flywheel Stress analysis (WIP)
+### Flywheel Stress analysis (todo)
 ### Flywheel dynamics
-### Battery Modeling
+### Battery Modeling (WIP)
 ### Battery Control
-### Magnetic bearing modeling and control (WIP)
-### Motor/generator modeling and control (WIP)
+### power interface
+### Magnetic bearing modeling and control (todo)
+### Motor/generator modeling and control (todo)

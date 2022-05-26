@@ -1,2 +1,4 @@
 site_name: pyens
-theme: readthedocs
+nav:
+    - Home: index.md
+theme: material

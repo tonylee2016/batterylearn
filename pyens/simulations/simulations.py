@@ -1,33 +1,14 @@
-import pyens.elements as elm
+from pandas import dataframe
+
+from pyens.elements import Base, Container
 
 
-class simdata:
-    pass
+class Simulator(Container, Base):
+    def __init__(self, name):
+        Base.__init__(type="simulator", name=name)
 
 
-class simulation:
-    def __init__(self):
-        self.elements = []
-        self.elements_pairs = []
-
-    def add(self, element: elm.Dynamical):
-        self.elements.append(element)
-
-    def pair(self, pair_setting: tuple):
-
-        # (flow_from, flow_to) = pair_setting
-
-        for j in pair_setting:
-            if j not in self.elements.index():
-                raise ValueError(
-                    "pair setting pointing to an element that does not exist !"
-                )
-
-        self.elements_pairs.append(pair_setting)
-
-    # todo: implement a dynamical system connection method
-
-    # def prepare_sim(self,
-    #                 x,):
-    #     for pair in self.elements_pairs:
-    #         # data flow pair[0]->pair[1]
+class Datasoure(Base):
+    def __init__(self, name, df: dataframe):
+        Base.__init__(self, type="datasoure", name=name)
+        self.df = df
