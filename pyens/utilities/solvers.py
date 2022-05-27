@@ -1,7 +1,7 @@
 from scipy import integrate
 
 
-def ivp(fcn, x0, v_t, force_map=None, method="RK45"):
+def ivp(fcn, x0, v_t, t_span, force_map=None, method="RK45"):
     """
     # numeric solver
     Parameters
@@ -18,7 +18,6 @@ def ivp(fcn, x0, v_t, force_map=None, method="RK45"):
      automatic sti‘RK45’ (default), ‘RK23’, ‘DOP853’, ‘Radau’, ‘BDF’, ‘LSODA’:
             """
 
-    t_span = (v_t[0], v_t[-1])
     y0 = x0
     t_eval = v_t
     if force_map:
