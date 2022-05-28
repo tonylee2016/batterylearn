@@ -101,7 +101,7 @@ def test_model_run():
     df = pd.DataFrame(data)
     d1 = Data(name="current_excite", df=df)
     m1 = EcmCell(name="cell_model1", parameters=param, curve=c1)
-    m1.display()
+    # m1.display()
     s1 = Simulator(name="simulator1")
     s1.attach(m1).attach(d1)
 
@@ -111,6 +111,6 @@ def test_model_run():
         config={"solver_type": "adaptive", "solution_name": "sol1"},
     )
 
-    sol.disp(["current", "soc", "vt"])
+    # sol.disp(["current", "soc", "vt"])
 
     pass
