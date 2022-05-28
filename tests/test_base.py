@@ -1,4 +1,3 @@
-import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 from pyens.models import Flywheel, OCV, EcmCell
@@ -66,19 +65,23 @@ def test_model_run():
         "C2": 65000,
         "CAP": 15,
         "ce": 0.96,
+        "v_limits": [2.5, 4.5],
+        "SOC_RANGE": [0.0, 100.0],
     }
 
     dt = 0.1
 
-    intial_soc = 0.0
-    CURR_EXCITATION = -7.5
+    initial_soc = 0.0
+    CURR_EXCITATION = 7.5
     HOUR = 3600.0
-    h_steps = [1.75, 0.25, 0.25, 0.25, 2]
+    h_steps = [1.75, 0.25, 0.25, 0.25, 1, 1, 1]
     current_steps = [
+        -CURR_EXCITATION,
+        -CURR_EXCITATION / 2,
+        -CURR_EXCITATION / 4,
+        -CURR_EXCITATION / 8,
+        0.0,
         CURR_EXCITATION,
-        CURR_EXCITATION / 2,
-        CURR_EXCITATION / 4,
-        CURR_EXCITATION / 8,
         0.0,
     ]
 
@@ -93,19 +96,21 @@ def test_model_run():
 
     data = {"time": time_np, "current": step_cur.current}
 
+    # data = {"time": t_steps, "current": current_steps}
+
     df = pd.DataFrame(data)
     d1 = Data(name="current_excite", df=df)
     m1 = EcmCell(name="cell_model1", parameters=param, curve=c1)
-
+    m1.display()
     s1 = Simulator(name="simulator1")
     s1.attach(m1).attach(d1)
 
     sol = s1.run(
         pair=("cell_model1", "current_excite"),
-        x0=np.array([0, 0, intial_soc]),
-        sol_name="sol1",
+        x0=np.array([0, 0, initial_soc]),
+        config={"solver_type": "adaptive", "solution_name": "sol1"},
     )
 
-    # sol.disp(['current', 'soc', 'ut'])
+    sol.disp(["current", "soc", "vt"])
 
     pass

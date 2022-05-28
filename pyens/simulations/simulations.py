@@ -52,12 +52,16 @@ class Simulator(Base, Container):
         Container.__init__(self)
         self.solution = None
 
-    def run(self, pair, x0, sol_name):
+    def run(self, pair, x0, config=None):
+        if config is None:
+            config = {"solver_type": "adaptive", "solution_name": ""}
         model = self.get(pair[0])
         data = self.get(pair[1])
 
         t0, t1, v_t = data.parse_time()
 
+        if config["solver_type"] == "adaptive":
+            v_t = None
         sol = ivp(
             fcn=model.ode,
             x0=x0,
@@ -69,18 +73,19 @@ class Simulator(Base, Container):
 
         # pack the solution
         [u1, u2, soc] = sol.y
-        i_v = data.get_field("current")
+        v_t = sol.t
+        i_v = data.get_current(v_t)
         ocv = model.ocv_curve.soc2ocv(soc)
-        ut = ocv - u1 - u2 - data.get_field("current") * model.get_param("R0")
+        vt = ocv - u1 - u2 - i_v * model.prm("R0")
         df_data = {
             "u1": u1,
             "u2": u2,
             "soc": soc,
-            "ut": ut,
+            "vt": vt,
             "current": i_v,
             "ocv": ocv,
-            "time": data.get_field("time"),
+            "time": v_t,
         }
         df = DataFrame(df_data)
-        d2 = Data(name=sol_name, df=df)
+        d2 = Data(name=config["solution_name"], df=df)
         return d2
