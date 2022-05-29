@@ -6,10 +6,14 @@ from pyens.elements import Base, Dynamical
 
 
 class OCV(Base):
-    def __init__(self, name, soc=list(), ocv=list()):
+    def __init__(self, name, soc: list = None, ocv: list = None):
         Base.__init__(self, type="soc_ocv_curve", name=name)
-        self.ocv = ocv
-        self.soc = soc
+        if soc is None and ocv is None:
+            self.ocv = [3.3, 3.5, 3.55, 3.6, 3.65, 3.68, 3.70, 3.8, 3.95, 4.0, 4.1]
+            self.soc = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+        else:
+            self.ocv = ocv
+            self.soc = soc
 
     def display(self):
         plt.figure()
@@ -24,11 +28,28 @@ class OCV(Base):
 
 
 class EcmCell(Base, Dynamical):
-    def __init__(self, name, parameters: dict, curve: OCV):
+    def __init__(self, name,
+                 parameters: dict = None,
+                 curve: OCV = OCV('default')):
         Base.__init__(self, type="EMC_Cell_Model", name=name)
         Dynamical.__init__(self)
+        if parameters is None:
+            parameters = {
+                "R0": 0.05,
+                "R1": 0.022,
+                "C1": 1500,
+                "R2": 0.019,
+                "C2": 65000,
+                "CAP": 1.1,
+                "ce": .99,
+                "v_limits": [2.5, 4.5],
+                "SOC_RANGE": [-5., 105.0],
+            }
         self.__parameters = parameters
         self.ocv_curve = curve
+
+    def update_rpm(self, prm):
+        self.__parameters = prm
 
     def prm(self, name):
         return self.__parameters[name]
@@ -40,31 +61,17 @@ class EcmCell(Base, Dynamical):
         # dSoC/dt
 
         # SOC constrain
-        SOC_range = (
-                self.prm("SOC_RANGE")[0]
-                <= x[2]
-                <= self.prm("SOC_RANGE")[1]
-        )
 
-        # terminal voltage constraint
-        vt = self.out(current=current, x=x)
-        vt_range = (
-                self.prm("v_limits")[0]
-                <= vt
-                <= self.prm("v_limits")[1]
-        )
-
-        if SOC_range and vt_range:
-            if current >= 0:
-                dSoC = -1 / self.prm("CAP") * current / 36
-            else:
-                dSoC = (
-                        -1
-                        / self.prm("CAP") * current * self.prm("ce")
-                        / 36
-                )
+        if current > 0 and x[2] > self.prm("SOC_RANGE")[0]:
+            dSoC = -1 / self.prm("CAP") * current / 36
+        elif current < 0 and x[2] < self.prm("SOC_RANGE")[1]:
+            dSoC = (
+                    -1
+                    / self.prm("CAP") * current * self.prm("ce")
+                    / 36
+            )
         else:
-            dSoC = 0.0
+            dSoC = 0.
 
         # dU1/dt
         du1 = (
@@ -94,8 +101,8 @@ class EcmCell(Base, Dynamical):
         with Drawing() as d:
             d.push()
             d += elm.BatteryCell().up()
-            d += (R0:= elm.Resistor().right().label(str(self.prm('R0'))))
-            d += elm.CurrentLabel(top=False,length=1.0,ofst=.6).right().at(R0)
+            d += (R0 := elm.Resistor().right().label(str(self.prm('R0'))))
+            d += elm.CurrentLabel(top=False, length=1.0, ofst=.6).right().at(R0)
             d.push()
             d += elm.Resistor().right().label(str(self.prm('R1')))
             d.pop()
@@ -114,6 +121,3 @@ class EcmCell(Base, Dynamical):
             d.pop()
             d += elm.Line(l=11.5).right()
             d += elm.Dot().color('blue')
-
-
-

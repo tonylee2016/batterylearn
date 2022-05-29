@@ -1,10 +1,10 @@
 # from scipy.integrate._ivp import OdeSolution
 import matplotlib.pyplot as plt
 import numpy as np
-from pandas import DataFrame
-
+import pandas as pd
 from pyens.elements import Base, Container
 from pyens.utilities import ivp
+from pyens.models import EcmCell
 
 
 class Current(Base):
@@ -23,7 +23,7 @@ class Current(Base):
 
 
 class Data(Base):
-    def __init__(self, name, df: DataFrame):
+    def __init__(self, name, df: pd.DataFrame):
         Base.__init__(self, type="data", name=name)
         self.df = df
 
@@ -33,13 +33,27 @@ class Data(Base):
         t1 = v_t.iloc[-1]
         return t0, t1, v_t
 
+    def __rvs_cur_dir(self):
+        self.df['current'] = -self.df['current']
+
     def get_field(self, name):
         return self.df[name]
 
     def get_current(self, ts):
         return np.interp(ts, self.df["time"], self.df["current"])
 
-    def disp(self, fields):
+    def fetch_file(self, file_path, schema):
+        self.df = pd.read_csv(file_path)
+        rsv_dir = schema.popitem()
+        self.df.rename(columns=schema, inplace=True)
+        if rsv_dir[1]:
+            self.__rvs_cur_dir()
+
+    def disp(self, fields=None):
+        if fields is None:
+            fields = list(self.df.columns)
+            fields.remove('time')
+
         figure, axes = plt.subplots(len(fields), 1)
         for idx, field in enumerate(fields):
             self.df.plot(x="time", y=field, ax=axes[idx])
@@ -52,11 +66,17 @@ class Simulator(Base, Container):
         Container.__init__(self)
         self.solution = None
 
-    def run(self, pair, x0, config=None):
+    def run(self, pair, x0=None, config=None):
+        if x0 is None:
+            x0 = [0., 0., 0]
         if config is None:
             config = {"solver_type": "adaptive", "solution_name": ""}
+
         model = self.get(pair[0])
         data = self.get(pair[1])
+
+        if not (isinstance(model, EcmCell) and isinstance(data, Data)):
+            ValueError('the simulation pair is wrong')
 
         t0, t1, v_t = data.parse_time()
 
@@ -86,6 +106,6 @@ class Simulator(Base, Container):
             "ocv": ocv,
             "time": v_t,
         }
-        df = DataFrame(df_data)
+        df = pd.DataFrame(df_data)
         d2 = Data(name=config["solution_name"], df=df)
         return d2
