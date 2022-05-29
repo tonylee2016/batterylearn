@@ -101,3 +101,4 @@ ENV/
 .idea/
 pyens/pyfess.sublime-project
 pyens/pyfess.sublime-workspace
+.vscode/settings.json

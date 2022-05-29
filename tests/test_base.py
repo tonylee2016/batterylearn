@@ -26,7 +26,7 @@ def test_flywheel_base():
     v_t = np.arange(0, 10, 0.001)
     x0 = np.array([0.1, 0.1, 0.1, 0.1, 0.1, 0, 0, 0, 0, 0])
 
-    sol = ivp(fw.ode, x0=x0, v_t=v_t)
+    # sol = ivp(fw.ode, x0=x0, t_span=v_t)
 
     # plt.plot(
     #     sol.t,
