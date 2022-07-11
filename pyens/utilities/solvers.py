@@ -34,4 +34,5 @@ def ivp(fcn, x0, v_t, t_span, force_map=None, method="RK45"):
         events=None,
         vectorized=False,
         args=args,
+        max_step=10,
     )
