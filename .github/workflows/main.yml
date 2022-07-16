@@ -55,6 +55,7 @@ jobs:
 
   tests_mac:
     needs: linter
+    if: ${{ false }}
     strategy:
       fail-fast: false
       matrix:
@@ -72,6 +73,7 @@ jobs:
         run: make test
 
   tests_win:
+  if: ${{ false }}
     needs: linter
     strategy:
       fail-fast: false
