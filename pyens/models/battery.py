@@ -6,14 +6,12 @@ from pyens.elements import Base, Dynamical
 
 
 class OCV(Base):
-    def __init__(self, name, soc: list = None, ocv: list = None):
+    def __init__(self, name,
+     soc: list = [3.3, 3.5, 3.55, 3.6, 3.65, 3.68, 3.70, 3.8, 3.95, 4.0, 4.1],
+     ocv: list = [0., 10., 20., 30., 40., 50., 60., 70., 80., 90., 100.]):
         Base.__init__(self, type="soc_ocv_curve", name=name)
-        if soc is None and ocv is None:
-            self.ocv = [3.3, 3.5, 3.55, 3.6, 3.65, 3.68, 3.70, 3.8, 3.95, 4.0, 4.1]
-            self.soc = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
-        else:
-            self.ocv = ocv
-            self.soc = soc
+        self.ocv = ocv
+        self.soc = soc
 
     def display(self):
         plt.figure()
