@@ -34,7 +34,7 @@ class Data(Base):
         return t0, t1, v_t
 
     def __rvs_cur_dir(self):
-        self.df['current'] = -self.df['current']
+        self.df["current"] = -self.df["current"]
 
     def get_field(self, name):
         return self.df[name]
@@ -52,7 +52,7 @@ class Data(Base):
     def disp(self, fields=None):
         if fields is None:
             fields = list(self.df.columns)
-            fields.remove('time')
+            fields.remove("time")
 
         figure, axes = plt.subplots(len(fields), 1)
         for idx, field in enumerate(fields):
@@ -68,7 +68,7 @@ class Simulator(Base, Container):
 
     def run(self, pair, x0=None, config=None):
         if x0 is None:
-            x0 = [0., 0., 0]
+            x0 = [0.0, 0.0, 0]
         if config is None:
             config = {"solver_type": "adaptive", "solution_name": ""}
 
@@ -76,7 +76,7 @@ class Simulator(Base, Container):
         data = self.get(pair[1])
 
         if not (isinstance(model, EcmCell) and isinstance(data, Data)):
-            ValueError('the simulation pair is wrong')
+            ValueError("the simulation pair is wrong")
 
         t0, t1, v_t = data.parse_time()
 
