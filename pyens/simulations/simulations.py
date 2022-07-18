@@ -108,5 +108,4 @@ class Simulator(Base, Container):
         }
         df = pd.DataFrame(df_data)
         d2 = Data(name=config["solution_name"], df=df)
-        self.attach(d2)
         return d2

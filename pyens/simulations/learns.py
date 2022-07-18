@@ -7,7 +7,7 @@ from scipy.optimize import (
     differential_evolution,
 )
 from pyens.models import EcmCell
-from .simulations import Simulator as Simulator
+from .simulations import Simulator
 from pyens.utilities import ivp
 from sklearn.metrics import mean_squared_error, r2_score
 
@@ -25,8 +25,8 @@ class Learner(Simulator):
         fit the parameters with least_squares
         https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.least_squares.html#scipy.optimize.least_squares
         """
-        s_sim = self.get(names[2])
-        m_sim = s_sim.get(names[0])
+        # s_sim = self.get(names[2])
+        m_sim = self.get(names[0])
         p0 = [
             m_sim.prm("R0"),
             m_sim.prm("R1"),
@@ -98,8 +98,7 @@ class Learner(Simulator):
         p0:init value of parameters
         """
         # build data and ecm then pass to run function
-        s1 = self.get(names[2])
-        m = s1.get(names[0])
+        m = self.get(names[0])
         prams = {
             "R0": p0[0],
             "R1": p0[1],
@@ -112,12 +111,12 @@ class Learner(Simulator):
             "SOC_RANGE": [0.0, 100.0],
         }
         m.update_rpm(prams)
-        d2 = s1.run(
+        d2 = self.run(
             pair=(names[0], names[1]),
             x0=x0,
             config=config,
         )
-        d1 = s1.get(names[1])
+        d1 = self.get(names[1])
         sim_vt = d2.df.vt
         meas_vt = d1.df.vt
         if method in ["minimize", "global"]:
