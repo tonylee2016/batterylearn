@@ -123,19 +123,19 @@ def test_model_run():
     pass
 
 
-def test_model_fit():
-    schema = {
-        "Test_Time(s)": "time",
-        "Current(A)": "current",
-        "Voltage(V)": "vt",
-        "rsv_i_dir": True,
-    }
-    d1 = Data(name="d1", df=None)
-    d1.fetch_file(TESTDATA_FILEPATH, schema=schema)
-    d1.disp(["current", "vt"])
-
-    m1 = EcmCell(name="m1")
-    s1 = Simulator(name="model_fitter")
-    so1 = s1.attach(m1).attach(d1).run(("m1", "d1"), x0=[0.0, 0.0, 100])
-    so1.disp(["soc", "vt", "current"])
-    pass
+# def test_model_fit():
+#     schema = {
+#         "Test_Time(s)": "time",
+#         "Current(A)": "current",
+#         "Voltage(V)": "vt",
+#         "rsv_i_dir": True,
+#     }
+#     d1 = Data(name="d1", df=None)
+#     d1.fetch_file(TESTDATA_FILEPATH, schema=schema)
+#     d1.disp(["current", "vt"])
+#
+#     m1 = EcmCell(name="m1")
+#     s1 = Simulator(name="model_fitter")
+#     so1 = s1.attach(m1).attach(d1).run(("m1", "d1"), x0=[0.0, 0.0, 100])
+#     so1.disp(["soc", "vt", "current"])
+#     pass

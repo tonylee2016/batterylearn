@@ -1,15 +1,18 @@
+import matplotlib.pyplot as plt
 import numpy as np
 from pandas import DataFrame as pd
 from scipy.optimize import (
-    leastsq,
-    least_squares,
-    minimize,
     differential_evolution,
+    least_squares,
+    leastsq,
+    minimize,
 )
-from pyens.models import EcmCell
-from .simulations import Simulator
-from pyens.utilities import ivp
 from sklearn.metrics import mean_squared_error, r2_score
+
+from pyens.models import EcmCell
+from pyens.utilities import ivp
+
+from .simulations import Simulator
 
 
 class Learner(Simulator):
@@ -33,6 +36,7 @@ class Learner(Simulator):
             m_sim.prm("C1"),
             m_sim.prm("R2"),
             m_sim.prm("C2"),
+            m_sim.prm("CAP"),
         ]
         if method == "ls":
             res = least_squares(
@@ -58,11 +62,12 @@ class Learner(Simulator):
                     (90, 50000),
                     (1e-8, 10),
                     (1e-8, 500000),
+                    (1e-8, 500),
                 ),
                 options={
                     "disp": True,
-                    "xatol": 1e-6,
-                    "fatol": 1e-6,
+                    "xatol": 1e-8,
+                    "fatol": 1e-8,
                     "maxiter": 5000,
                     "maxfev": 5000,
                     # "adaptive": True,
@@ -83,6 +88,7 @@ class Learner(Simulator):
                     (90, 50000),
                     (1e-8, 10),
                     (1e-8, 500000),
+                    (1e-8, 500),
                 ),
             )
         return res
@@ -105,10 +111,10 @@ class Learner(Simulator):
             "C1": p0[2],
             "R2": p0[3],
             "C2": p0[4],
-            "CAP": m.prm("CAP"),
-            "ce": 0.96,
-            "v_limits": [2.5, 4.5],
-            "SOC_RANGE": [0.0, 100.0],
+            "CAP": p0[5],
+            "ce": m.prm("ce"),
+            "v_limits": m.prm("v_limits"),
+            "SOC_RANGE": m.prm("SOC_RANGE"),
         }
         m.update_rpm(prams)
         d2 = self.run(
@@ -122,6 +128,9 @@ class Learner(Simulator):
         if method in ["minimize", "global"]:
             res = mean_squared_error(meas_vt, sim_vt, squared=False)
             print("rmse", res, len(meas_vt), len(sim_vt))
+            # ax = d1.df[['vt']].plot()
+            # d2.df['vt'].plot(ax=ax)
+            # plt.show()
             return res
         res = abs(meas_vt - sim_vt)
         print("diff", res)

@@ -2,9 +2,10 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+
 from pyens.elements import Base, Container
-from pyens.utilities import ivp
 from pyens.models import EcmCell
+from pyens.utilities import ivp
 
 
 class Current(Base):
@@ -43,17 +44,26 @@ class Data(Base):
         return np.interp(ts, self.df["time"], self.df["current"])
 
     def fetch_file(self, file_path, schema):
-        self.df = pd.read_csv(file_path)
+        self.df = pd.read_csv(file_path, infer_datetime_format=True)
         rsv_dir = schema.popitem()
         self.df.rename(columns=schema, inplace=True)
+        self.df["time"] = pd.to_datetime(self.df.time)
         if rsv_dir[1]:
             self.__rvs_cur_dir()
+
+    def to_abs_time(self):
+        a = self.df["time"] - self.df["time"][0]
+        self.df["time"] = a.dt.total_seconds()
 
     def disp(self, fields=None):
         if fields is None:
             fields = list(self.df.columns)
             fields.remove("time")
 
+        # self.df[['u1','u2','vt','ocv']].plot()
+        # self.df[['u1', 'u2']].plot()
+        # self.df[['current']].plot()
+        # self.df[['soc']].plot()
         figure, axes = plt.subplots(len(fields), 1)
         for idx, field in enumerate(fields):
             self.df.plot(x="time", y=field, ax=axes[idx])
@@ -80,8 +90,8 @@ class Simulator(Base, Container):
 
         t0, t1, v_t = data.parse_time()
 
-        if config["solver_type"] == "adaptive":
-            v_t = None
+        # if config["solver_type"] == "adaptive":
+        #     v_t = None
         sol = ivp(
             fcn=model.ode,
             x0=x0,
