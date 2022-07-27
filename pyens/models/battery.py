@@ -1,14 +1,42 @@
 import matplotlib.pyplot as plt
 import numpy as np
-from schemdraw import Drawing
 import schemdraw.elements as elm
+from schemdraw import Drawing
+
 from pyens.elements import Base, Dynamical
 
 
 class OCV(Base):
-    def __init__(self, name,
-     soc: list = [3.3, 3.5, 3.55, 3.6, 3.65, 3.68, 3.70, 3.8, 3.95, 4.0, 4.1],
-     ocv: list = [0., 10., 20., 30., 40., 50., 60., 70., 80., 90., 100.]):
+    def __init__(
+        self,
+        name,
+        soc: list = [
+            3.3,
+            3.5,
+            3.55,
+            3.6,
+            3.65,
+            3.68,
+            3.70,
+            3.8,
+            3.95,
+            4.0,
+            4.1,
+        ],
+        ocv: list = [
+            0.0,
+            10.0,
+            20.0,
+            30.0,
+            40.0,
+            50.0,
+            60.0,
+            70.0,
+            80.0,
+            90.0,
+            100.0,
+        ],
+    ):
         Base.__init__(self, type="soc_ocv_curve", name=name)
         self.ocv = ocv
         self.soc = soc
@@ -26,9 +54,9 @@ class OCV(Base):
 
 
 class EcmCell(Base, Dynamical):
-    def __init__(self, name,
-                 parameters: dict = None,
-                 curve: OCV = OCV('default')):
+    def __init__(
+        self, name, parameters: dict = None, curve: OCV = OCV("default")
+    ):
         Base.__init__(self, type="EMC_Cell_Model", name=name)
         Dynamical.__init__(self)
         if parameters is None:
@@ -39,9 +67,9 @@ class EcmCell(Base, Dynamical):
                 "R2": 0.019,
                 "C2": 65000,
                 "CAP": 1.1,
-                "ce": .99,
-                "v_limits": [2.5, 4.5],
-                "SOC_RANGE": [-5., 105.0],
+                "ce": 0.99,
+                "v_limits": [1.5, 4.5],
+                "SOC_RANGE": [-5.0, 105.0],
             }
         self.__parameters = parameters
         self.ocv_curve = curve
@@ -63,35 +91,23 @@ class EcmCell(Base, Dynamical):
         if current > 0 and x[2] > self.prm("SOC_RANGE")[0]:
             dSoC = -1 / self.prm("CAP") * current / 36
         elif current < 0 and x[2] < self.prm("SOC_RANGE")[1]:
-            dSoC = (
-                    -1
-                    / self.prm("CAP") * current * self.prm("ce")
-                    / 36
-            )
+            dSoC = -1 / self.prm("CAP") * current * self.prm("ce") / 36
         else:
-            dSoC = 0.
+            dSoC = 0.0
 
         # dU1/dt
-        du1 = (
-                1
-                / self.prm("C1")
-                * (current - 1 / self.prm("R1") * x[0])
-        )
+        du1 = 1 / self.prm("C1") * (current - 1 / self.prm("R1") * x[0])
         # dU2/dt
-        du2 = (
-                1
-                / self.prm("C2")
-                * (current - 1 / self.prm("R2") * x[1])
-        )
+        du2 = 1 / self.prm("C2") * (current - 1 / self.prm("R2") * x[1])
 
         return np.array([du1, du2, dSoC])
 
     def out(self, current, x):
         vt = (
-                self.ocv_curve.soc2ocv(x[2])
-                - x[0]
-                - x[1]
-                - current * self.prm("R0")
+            self.ocv_curve.soc2ocv(x[2])
+            - x[0]
+            - x[1]
+            - current * self.prm("R0")
         )
         return vt
 
@@ -99,23 +115,27 @@ class EcmCell(Base, Dynamical):
         with Drawing() as d:
             d.push()
             d += elm.BatteryCell().up()
-            d += (R0 := elm.Resistor().right().label(str(self.prm('R0'))))
-            d += elm.CurrentLabel(top=False, length=1.0, ofst=.6).right().at(R0)
+            d += (R0 := elm.Resistor().right().label(str(self.prm("R0"))))
+            d += (
+                elm.CurrentLabel(top=False, length=1.0, ofst=0.6)
+                .right()
+                .at(R0)
+            )
             d.push()
-            d += elm.Resistor().right().label(str(self.prm('R1')))
+            d += elm.Resistor().right().label(str(self.prm("R1")))
             d.pop()
             d += elm.Line(l=1.5).down()
-            d += elm.Capacitor().right().label(str(self.prm('C1')))
+            d += elm.Capacitor().right().label(str(self.prm("C1")))
             d += elm.Line(l=1.5).up()
             d += elm.Line(l=1.5).right()
             d.push()
-            d += elm.Resistor().right().label(str(self.prm('R2')))
+            d += elm.Resistor().right().label(str(self.prm("R2")))
             d.pop()
             d += elm.Line(l=1.5).down()
-            d += elm.Capacitor().right().label(str(self.prm('C2')))
+            d += elm.Capacitor().right().label(str(self.prm("C2")))
             d += elm.Line(l=1.5).up()
             d += elm.Line(l=1).right()
-            d += elm.Dot().color('blue')
+            d += elm.Dot().color("blue")
             d.pop()
             d += elm.Line(l=11.5).right()
-            d += elm.Dot().color('blue')
+            d += elm.Dot().color("blue")

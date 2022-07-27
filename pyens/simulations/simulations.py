@@ -2,9 +2,10 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+
 from pyens.elements import Base, Container
-from pyens.utilities import ivp
 from pyens.models import EcmCell
+from pyens.utilities import ivp
 
 
 class Current(Base):
@@ -34,7 +35,7 @@ class Data(Base):
         return t0, t1, v_t
 
     def __rvs_cur_dir(self):
-        self.df['current'] = -self.df['current']
+        self.df["current"] = -self.df["current"]
 
     def get_field(self, name):
         return self.df[name]
@@ -43,17 +44,26 @@ class Data(Base):
         return np.interp(ts, self.df["time"], self.df["current"])
 
     def fetch_file(self, file_path, schema):
-        self.df = pd.read_csv(file_path)
+        self.df = pd.read_csv(file_path, infer_datetime_format=True)
         rsv_dir = schema.popitem()
         self.df.rename(columns=schema, inplace=True)
+        self.df["time"] = pd.to_datetime(self.df.time)
         if rsv_dir[1]:
             self.__rvs_cur_dir()
+
+    def to_abs_time(self):
+        a = self.df["time"] - self.df["time"][0]
+        self.df["time"] = a.dt.total_seconds()
 
     def disp(self, fields=None):
         if fields is None:
             fields = list(self.df.columns)
-            fields.remove('time')
+            fields.remove("time")
 
+        # self.df[['u1','u2','vt','ocv']].plot()
+        # self.df[['u1', 'u2']].plot()
+        # self.df[['current']].plot()
+        # self.df[['soc']].plot()
         figure, axes = plt.subplots(len(fields), 1)
         for idx, field in enumerate(fields):
             self.df.plot(x="time", y=field, ax=axes[idx])
@@ -68,7 +78,7 @@ class Simulator(Base, Container):
 
     def run(self, pair, x0=None, config=None):
         if x0 is None:
-            x0 = [0., 0., 0]
+            x0 = [0.0, 0.0, 0]
         if config is None:
             config = {"solver_type": "adaptive", "solution_name": ""}
 
@@ -76,12 +86,12 @@ class Simulator(Base, Container):
         data = self.get(pair[1])
 
         if not (isinstance(model, EcmCell) and isinstance(data, Data)):
-            ValueError('the simulation pair is wrong')
+            ValueError("the simulation pair is wrong")
 
         t0, t1, v_t = data.parse_time()
 
-        if config["solver_type"] == "adaptive":
-            v_t = None
+        # if config["solver_type"] == "adaptive":
+        #     v_t = None
         sol = ivp(
             fcn=model.ode,
             x0=x0,
