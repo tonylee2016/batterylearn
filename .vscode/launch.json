@@ -11,7 +11,8 @@
             "program": "${file}",
             "console": "integratedTerminal",
             "cwd": "${fileDirname}",
-            "justMyCode": true
+            "justMyCode": true,
+            "terminal.integrated.inheritEnv": true
         },
 
     ]

@@ -30,7 +30,7 @@ class Data(Base):
 
     def parse_time(self):
         v_t = self.df["time"]
-        t0 = v_t[0]
+        t0 = v_t.iloc[0]
         t1 = v_t.iloc[-1]
         return t0, t1, v_t
 
@@ -44,7 +44,7 @@ class Data(Base):
         return np.interp(ts, self.df["time"], self.df["current"])
 
     def fetch_file(self, file_path, schema):
-        self.df = pd.read_csv(file_path, infer_datetime_format=True)
+        self.df = pd.read_excel(file_path)
         rsv_dir = schema.popitem()
         self.df.rename(columns=schema, inplace=True)
         self.df["time"] = pd.to_datetime(self.df.time)
@@ -92,6 +92,12 @@ class Simulator(Base, Container):
 
         # if config["solver_type"] == "adaptive":
         #     v_t = None
+        
+        if 'max_step' in config:
+            max_step=config['max_step']
+        else:
+            max_step=np.inf
+        
         sol = ivp(
             fcn=model.ode,
             x0=x0,
@@ -99,6 +105,7 @@ class Simulator(Base, Container):
             t_span=(t0, t1),
             force_map=data.get_current,
             method="RK45",
+            max_step=max_step,
         )
 
         # pack the solution

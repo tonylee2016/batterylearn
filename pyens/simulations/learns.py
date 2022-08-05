@@ -4,10 +4,9 @@ from pandas import DataFrame as pd
 from scipy.optimize import (
     differential_evolution,
     least_squares,
-    leastsq,
     minimize,
 )
-from sklearn.metrics import mean_squared_error, r2_score
+from sklearn.metrics import mean_squared_error, r2_score, mean_absolute_error
 
 from pyens.models import EcmCell
 from pyens.utilities import ivp
@@ -23,7 +22,7 @@ class Learner(Simulator):
     def __init__(self, name):
         Simulator.__init__(self, name=name)
 
-    def fit_parameters(self, names, config, x0, method):
+    def fit_parameters(self, names, config, x0, method, bounds):
         """
         fit the parameters with least_squares
         https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.least_squares.html#scipy.optimize.least_squares
@@ -39,13 +38,14 @@ class Learner(Simulator):
             m_sim.prm("CAP"),
         ]
         if method == "ls":
+            bounds = ([i[0] for i in bounds],[i[1] for i in bounds])
             res = least_squares(
                 self.residuals,
                 p0,
-                # bounds=([0,0,0,0,0],[1,0.5,1600,0.5,65000]),
-                method="lm",
-                # tr_solver='lsmr',
+                bounds=bounds,
                 args=(names, config, x0, method),
+                verbose=2,
+                xtol = 1e-20,
             )
         elif method == "minimize":
             """
@@ -54,42 +54,28 @@ class Learner(Simulator):
             res = minimize(
                 self.residuals,
                 p0,
-                # callback=callbackF,
                 args=(names, config, x0, method),
-                bounds=(
-                    (1e-8, 0.3),
-                    (1e-8, 10),
-                    (90, 50000),
-                    (1e-8, 10),
-                    (1e-8, 500000),
-                    (1e-8, 500),
-                ),
+                method=config['method'],
+                bounds=bounds,
                 options={
                     "disp": True,
-                    "xatol": 1e-8,
-                    "fatol": 1e-8,
-                    "maxiter": 5000,
-                    "maxfev": 5000,
+                    "maxiter": config['maxiter'],
+                    "verbose": 2,
                     # "adaptive": True,
                 },
-                method="Powell",
                 #  Powell, L-BFGS-B, TNC, SLSQP, and trust-constr
             )
+            
         elif method == "global":
             res = differential_evolution(
                 func=self.residuals,
                 x0=p0,
-                # callback=callbackF,
-                polish=True,
+                polish=False,
                 args=(names, config, x0, method),
-                bounds=(
-                    (1e-8, 0.5),
-                    (1e-8, 1),
-                    (90, 50000),
-                    (1e-8, 10),
-                    (1e-8, 500000),
-                    (1e-8, 500),
-                ),
+                disp=True,
+                bounds= bounds,
+                workers=-1,
+                maxiter=config['maxiter'],
             )
         return res
 
@@ -126,12 +112,18 @@ class Learner(Simulator):
         sim_vt = d2.df.vt
         meas_vt = d1.df.vt
         if method in ["minimize", "global"]:
-            res = mean_squared_error(meas_vt, sim_vt, squared=False)
-            print("rmse", res, len(meas_vt), len(sim_vt))
-            # ax = d1.df[['vt']].plot()
-            # d2.df['vt'].plot(ax=ax)
-            # plt.show()
+            res = mean_squared_error(meas_vt,sim_vt)
+            if method in ["minimize"]:
+                print("rmse", res, len(meas_vt), len(sim_vt))
             return res
-        res = abs(meas_vt - sim_vt)
-        print("diff", res)
-        return res
+        #     res = mean_squared_error(meas_vt, sim_vt, squared=False)
+        #     print("rmse", res, len(meas_vt), len(sim_vt))
+        #     # ax = d1.df[['vt']].plot()
+        #     # d2.df['vt'].plot(ax=ax)
+        #     # plt.show()
+        #     return res
+        # res = abs(meas_vt - sim_vt)
+        # print("diff", res)
+        
+        # print("rmse", res, len(meas_vt), len(sim_vt))
+        return meas_vt - sim_vt

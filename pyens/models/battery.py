@@ -95,11 +95,12 @@ class EcmCell(Base, Dynamical):
         else:
             dSoC = 0.0
 
-        # dU1/dt
-        du1 = 1 / self.prm("C1") * (current - 1 / self.prm("R1") * x[0])
+        # dU1/dt*C1 + u1/R1 = i
+        du1 = 1 / self.prm("C1") * (current -  x[0] / self.prm("R1"))
         # dU2/dt
-        du2 = 1 / self.prm("C2") * (current - 1 / self.prm("R2") * x[1])
-
+        du2 = 1 / self.prm("C2") * (current - x[1] / self.prm("R2"))
+        # todo: potential overflow
+        
         return np.array([du1, du2, dSoC])
 
     def out(self, current, x):

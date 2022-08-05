@@ -1,7 +1,8 @@
 from scipy import integrate
+import numpy as np
 
 
-def ivp(fcn, x0, v_t, t_span, force_map=None, method="RK45"):
+def ivp(fcn, x0, v_t, t_span, force_map=None, method="RK45",max_step=np.inf):
     """
     # numeric solver
     Parameters
@@ -34,4 +35,5 @@ def ivp(fcn, x0, v_t, t_span, force_map=None, method="RK45"):
         events=None,
         vectorized=False,
         args=args,
+        max_step=max_step,
     )
