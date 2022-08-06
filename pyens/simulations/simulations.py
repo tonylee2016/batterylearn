@@ -92,12 +92,12 @@ class Simulator(Base, Container):
 
         # if config["solver_type"] == "adaptive":
         #     v_t = None
-        
-        if 'max_step' in config:
-            max_step=config['max_step']
+
+        if "max_step" in config:
+            max_step = config["max_step"]
         else:
-            max_step=np.inf
-        
+            max_step = np.inf
+
         sol = ivp(
             fcn=model.ode,
             x0=x0,

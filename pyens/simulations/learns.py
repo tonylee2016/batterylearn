@@ -3,10 +3,12 @@ import numpy as np
 from pandas import DataFrame as pd
 from scipy.optimize import (
     differential_evolution,
+    direct,
     least_squares,
     minimize,
+    shgo,
 )
-from sklearn.metrics import mean_squared_error, r2_score, mean_absolute_error
+from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 
 from pyens.models import EcmCell
 from pyens.utilities import ivp
@@ -22,7 +24,7 @@ class Learner(Simulator):
     def __init__(self, name):
         Simulator.__init__(self, name=name)
 
-    def fit_parameters(self, names, config, x0, method, bounds):
+    def fit_parameters(self, names, config, x0, solver, bounds):
         """
         fit the parameters with least_squares
         https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.least_squares.html#scipy.optimize.least_squares
@@ -32,50 +34,56 @@ class Learner(Simulator):
         p0 = [
             m_sim.prm("R0"),
             m_sim.prm("R1"),
-            m_sim.prm("C1"),
+            m_sim.prm("tau1"),
             m_sim.prm("R2"),
-            m_sim.prm("C2"),
+            m_sim.prm("tau2"),
             m_sim.prm("CAP"),
         ]
-        if method == "ls":
-            bounds = ([i[0] for i in bounds],[i[1] for i in bounds])
+        if solver == "ls":
+            bounds = ([i[0] for i in bounds], [i[1] for i in bounds])
             res = least_squares(
                 self.residuals,
                 p0,
                 bounds=bounds,
-                args=(names, config, x0, method),
+                args=(names, config, x0, solver),
                 verbose=2,
-                xtol = 1e-20,
+                xtol=None,
             )
-        elif method == "minimize":
+        elif solver == "minimize":
             """
             https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.minimize.html#scipy.optimize.minimize
             """
             res = minimize(
                 self.residuals,
                 p0,
-                args=(names, config, x0, method),
-                method=config['method'],
+                args=(names, config, x0, solver),
+                method=config["method"],
                 bounds=bounds,
                 options={
                     "disp": True,
-                    "maxiter": config['maxiter'],
-                    "verbose": 2,
+                    "maxiter": config["maxiter"],
+                    "maxfev": config["maxfev"],
                     # "adaptive": True,
                 },
                 #  Powell, L-BFGS-B, TNC, SLSQP, and trust-constr
             )
-            
-        elif method == "global":
+
+        elif solver == "diff":
             res = differential_evolution(
                 func=self.residuals,
                 x0=p0,
                 polish=False,
-                args=(names, config, x0, method),
+                args=(names, config, x0, solver),
                 disp=True,
-                bounds= bounds,
+                bounds=bounds,
                 workers=-1,
-                maxiter=config['maxiter'],
+                maxiter=config["maxiter"],
+            )
+        elif solver == "shgo":
+            res = shgo(
+                func=self.residuals,
+                bounds=bounds,
+                args=(names, config, x0, solver),
             )
         return res
 
@@ -84,7 +92,7 @@ class Learner(Simulator):
     #     print '{0:4d}   {1: 3.6f}   {2: 3.6f}   {3: 3.6f}   {4: 3.6f}'.format(Nfeval, Xi[0], Xi[1], Xi[2], Xi[3])
     #     Nfeval += 1
 
-    def residuals(self, p0, names, config, x0, method):
+    def residuals(self, p0, names, config, x0, method, bounds):
         """
         vt: array of terminal voltage from data = data.df.vt.to_numpy()
         p0:init value of parameters
@@ -94,9 +102,9 @@ class Learner(Simulator):
         prams = {
             "R0": p0[0],
             "R1": p0[1],
-            "C1": p0[2],
+            "tau1": p0[2],
             "R2": p0[3],
-            "C2": p0[4],
+            "tau2": p0[4],
             "CAP": p0[5],
             "ce": m.prm("ce"),
             "v_limits": m.prm("v_limits"),
@@ -111,8 +119,8 @@ class Learner(Simulator):
         d1 = self.get(names[1])
         sim_vt = d2.df.vt
         meas_vt = d1.df.vt
-        if method in ["minimize", "global"]:
-            res = mean_squared_error(meas_vt,sim_vt)
+        if method in ["minimize", "diff"]:
+            res = mean_squared_error(meas_vt, sim_vt)
             if method in ["minimize"]:
                 print("rmse", res, len(meas_vt), len(sim_vt))
             return res
@@ -124,6 +132,6 @@ class Learner(Simulator):
         #     return res
         # res = abs(meas_vt - sim_vt)
         # print("diff", res)
-        
+
         # print("rmse", res, len(meas_vt), len(sim_vt))
         return meas_vt - sim_vt
