@@ -63,7 +63,7 @@ class EcmCell(Base, Dynamical):
             parameters = {
                 "R0": 0.05,
                 "R1": 0.022,
-                "tau1": 2, 
+                "tau1": 2,
                 "R2": 0.019,
                 "tau2": 1,
                 "CAP": 1.1,
@@ -96,10 +96,16 @@ class EcmCell(Base, Dynamical):
             dSoC = 0.0
 
         # dU/dt*C + u/R = i
-        du1 = current / self.prm("tau1") / 60. * self.prm("R1") -  x[0] / self.prm("tau1") / 60.
+        du1 = (
+            current / self.prm("tau1") / 60.0 * self.prm("R1")
+            - x[0] / self.prm("tau1") / 60.0
+        )
         # dU2/dt
-        du2 = current / self.prm("tau2") / 3600. * self.prm("R2") -  x[0] / self.prm("tau2") / 3600.
-        
+        du2 = (
+            current / self.prm("tau2") / 3600.0 * self.prm("R2")
+            - x[0] / self.prm("tau2") / 3600.0
+        )
+
         return np.array([du1, du2, dSoC])
 
     def out(self, current, x):
@@ -115,7 +121,11 @@ class EcmCell(Base, Dynamical):
         with Drawing() as d:
             d.push()
             d += elm.BatteryCell().up()
-            d += (R0 := elm.Resistor().right().label("{0:.3e}".format(self.prm("R0"))))
+            d += (
+                R0 := elm.Resistor()
+                .right()
+                .label("{0:.3e}".format(self.prm("R0")))
+            )
             d += (
                 elm.CurrentLabel(top=False, length=1.0, ofst=0.6)
                 .right()
@@ -125,14 +135,22 @@ class EcmCell(Base, Dynamical):
             d += elm.Resistor().right().label("{0:.3e}".format(self.prm("R1")))
             d.pop()
             d += elm.Line(l=1.5).down()
-            d += elm.Capacitor().right().label("{0:.3e}".format(self.prm("tau1")/self.prm("R1")))
+            d += (
+                elm.Capacitor()
+                .right()
+                .label("{0:.3e}".format(self.prm("tau1") / self.prm("R1")))
+            )
             d += elm.Line(l=1.5).up()
             d += elm.Line(l=1.5).right()
             d.push()
             d += elm.Resistor().right().label("{0:.3e}".format(self.prm("R2")))
             d.pop()
             d += elm.Line(l=1.5).down()
-            d += elm.Capacitor().right().label("{0:.3e}".format(self.prm("tau2")/self.prm("R2")))
+            d += (
+                elm.Capacitor()
+                .right()
+                .label("{0:.3e}".format(self.prm("tau2") / self.prm("R2")))
+            )
             d += elm.Line(l=1.5).up()
             d += elm.Line(l=1).right()
             d += elm.Dot().color("blue")
