@@ -63,9 +63,9 @@ class EcmCell(Base, Dynamical):
             parameters = {
                 "R0": 0.05,
                 "R1": 0.022,
-                "tau1": 120, 
+                "tau1": 2, 
                 "R2": 0.019,
-                "tau2": 3600,
+                "tau2": 1,
                 "CAP": 1.1,
                 "ce": 0.99,
                 "v_limits": [1.5, 4.5],
@@ -96,9 +96,9 @@ class EcmCell(Base, Dynamical):
             dSoC = 0.0
 
         # dU/dt*C + u/R = i
-        du1 = current / self.prm("tau1") * self.prm("R1") -  x[0] / self.prm("tau1")
+        du1 = current / self.prm("tau1") / 60. * self.prm("R1") -  x[0] / self.prm("tau1") / 60.
         # dU2/dt
-        du2 = current / self.prm("tau2") * self.prm("R2") -  x[0] / self.prm("tau2")
+        du2 = current / self.prm("tau2") / 3600. * self.prm("R2") -  x[0] / self.prm("tau2") / 3600.
         
         return np.array([du1, du2, dSoC])
 

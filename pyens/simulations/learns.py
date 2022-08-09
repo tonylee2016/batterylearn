@@ -72,7 +72,7 @@ class Learner(Simulator):
             res = differential_evolution(
                 func=self.residuals,
                 x0=p0,
-                polish=False,
+                polish=True,
                 args=(names, config, x0, solver),
                 disp=True,
                 bounds=bounds,
@@ -92,7 +92,7 @@ class Learner(Simulator):
     #     print '{0:4d}   {1: 3.6f}   {2: 3.6f}   {3: 3.6f}   {4: 3.6f}'.format(Nfeval, Xi[0], Xi[1], Xi[2], Xi[3])
     #     Nfeval += 1
 
-    def residuals(self, p0, names, config, x0, method, bounds):
+    def residuals(self, p0, names, config, x0, method):
         """
         vt: array of terminal voltage from data = data.df.vt.to_numpy()
         p0:init value of parameters
