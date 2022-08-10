@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-(unreleased)
+1.1.3 (2022-08-10)
 ------------
 - Normalize the variables for parameter extraction, reformat the codes.
   [Tony Li]
