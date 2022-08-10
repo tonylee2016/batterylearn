@@ -2,6 +2,20 @@ Changelog
 =========
 
 
+(unreleased)
+------------
+- Normalize the variables for parameter extraction, reformat the codes.
+  [Tony Li]
+- Add one notebook for driving cycle and one or charging parameter
+  fitting. [Tony Li]
+- Change cell parameters to use time constants and resistance. [Tony Li]
+- Add some comment, fix typos. [Tony Li]
+- Update optimizer and fix dataframe index issue (which can lead to
+  undefined solver behavoir) [Tony Li]
+- Add parameter extraction feature to the demo notebook. [Tony Li]
+- Release: version 1.1.2 🚀 [Tony Li]
+
+
 1.1.2 (2022-07-27)
 ------------------
 - Ready for (1.1.2) [Tony Li]
