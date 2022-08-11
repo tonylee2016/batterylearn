@@ -1,7 +1,7 @@
 """
-pyens base module.
+batterylearn base module.
 
-This is the principal module of the pyens project.
+This is the principal module of the batterylearn project.
 here you put your main classes and objects.
 
 Be creative! do whatever you want!
@@ -14,4 +14,4 @@ and then choose `flask` as template.
 """
 
 # example constant variable
-NAME = "pyens"
+NAME = "batterylearn"

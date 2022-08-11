@@ -3,7 +3,7 @@ import numpy as np
 import schemdraw.elements as elm
 from schemdraw import Drawing
 
-from pyens.elements import Base, Dynamical
+from batterylearn.elements import Base, Dynamical
 
 
 class OCV(Base):

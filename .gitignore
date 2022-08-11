@@ -99,6 +99,6 @@ ENV/
 # mypy
 .mypy_cache/
 .idea/
-pyens/pyfess.sublime-project
-pyens/pyfess.sublime-workspace
+batterylearn/pyfess.sublime-project
+batterylearn/pyfess.sublime-workspace
 .vscode/settings.json

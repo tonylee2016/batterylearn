@@ -1,50 +1,15 @@
 import numpy as np
 import pandas as pd
 import os
-from pyens.models import Flywheel, OCV, EcmCell
-from pyens.utilities import ivp
-from pyens.simulations import Simulator, Data, Current
+from batterylearn.models import OCV, EcmCell
+from batterylearn.utilities import ivp
+from batterylearn.simulations import Simulator, Data, Current
 import matplotlib.pyplot as plt
 from scipy import optimize
 
 TESTDATA_FILEPATH = os.path.join(
     os.path.dirname(__file__), "CS2_3_9_28_11.csv"
 )
-
-
-def test_flywheel_base():
-    K = np.diag([5, 5, 5, 5, 5])  # add some
-    C = np.zeros((5, 5))
-    C[0, 1] = 100
-    C[1, 0] = -100
-    C[0, 0] = 1
-    C[1, 1] = 1
-    C[2, 2] = 1
-    C[3, 3] = 1
-    C[4, 4] = 1
-    M = np.diag([10, 10, 5, 5, 5])
-    fw = Flywheel(K, C, M, w0=50.0, name="fw1")
-
-    v_t = np.arange(0, 10, 0.001)
-    x0 = np.array([0.1, 0.1, 0.1, 0.1, 0.1, 0, 0, 0, 0, 0])
-
-    # sol = ivp(fw.ode, x0=x0, t_span=v_t)
-
-    # plt.plot(
-    #     sol.t,
-    #     np.transpose(
-    #         sol.y[
-    #         :2,
-    #         ]
-    #     ),
-    # )
-    # # plt.legend(["thetax", "thetay", "x", "y", "z"])
-    # # plt.show()
-    # # plt.plot()
-
-
-def test_flywheel_model_with_bearing():
-    pass
 
 
 def test_ocv_curve():
@@ -67,9 +32,9 @@ def test_model_run():
     param = {
         "R0": 0.034,
         "R1": 0.022,
-        "C1": 1500,
+        "tau1": 5,
         "R2": 0.019,
-        "C2": 65000,
+        "tau2": 1,
         "CAP": 15,
         "ce": 0.96,
         "v_limits": [2.5, 4.5],

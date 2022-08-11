@@ -1,4 +1,4 @@
-"""CLI interface for pyens project.
+"""CLI interface for batterylearn project.
 
 Be creative! do whatever you want!
 
@@ -12,7 +12,7 @@ Be creative! do whatever you want!
 def main():  # pragma: no cover
     """
     The main function executes on commands:
-    `python -m pyens` and `$ pyens `.
+    `python -m batterylearn` and `$ batterylearn `.
 
     This is your program's entry point.
 

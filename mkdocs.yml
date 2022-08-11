@@ -1,4 +1,4 @@
-site_name: pyens
+site_name: batterylearn
 nav:
     - Home: index.md
 theme: material

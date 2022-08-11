@@ -1,6 +1,6 @@
 <!-- Our title -->
 <div align="center">
-  <h3>pyens</h3>
+  <h3>batterylearn</h3>
 </div>
 
 <!-- Short description -->
@@ -15,7 +15,7 @@
 
 | Section | Description |
 |-|-|
-| [Installation](#installation) | pip install pyens |
+| [Installation](#installation) | pip install batterylearn |
 | [Available features](#available-features) | overview of functionalities |
 | [Documentation](#documentation) | wip |
 | [Contributing](#contributing) | wip |
@@ -25,10 +25,7 @@
 
 ## Available features
 
-### Flywheel Stress analysis (todo)
-### Flywheel dynamics
 ### Battery Modeling (WIP)
 ### Battery Control
 ### power interface
-### Magnetic bearing modeling and control (todo)
 ### Motor/generator modeling and control (todo)

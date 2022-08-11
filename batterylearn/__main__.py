@@ -1,4 +1,4 @@
-"""Entry point for pyens."""
+"""Entry point for batterylearn."""
 
 from .cli import main  # pragma: no cover
 

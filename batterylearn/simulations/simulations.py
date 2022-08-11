@@ -3,9 +3,9 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
-from pyens.elements import Base, Container
-from pyens.models import EcmCell
-from pyens.utilities import ivp
+from batterylearn.elements import Base, Container
+from batterylearn.models import EcmCell
+from batterylearn.utilities import ivp
 
 
 class Current(Base):

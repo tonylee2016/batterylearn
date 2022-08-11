@@ -1,6 +1,6 @@
 # How to develop on this project
 
-pyens welcomes contributions from the community.
+batterylearn welcomes contributions from the community.
 
 **You need PYTHON3!**
 
@@ -8,9 +8,9 @@ This instructions are for linux base systems. (Linux, MacOS, BSD, etc.)
 ## Setting up your own fork of this repo.
 
 - On github interface click on `Fork` button.
-- Clone your fork of this repo. `git clone git@github.com:YOUR_GIT_USERNAME/pyens.git`
-- Enter the directory `cd pyens`
-- Add upstream repo `git remote add upstream https://github.com/tonylee2016/pyens`
+- Clone your fork of this repo. `git clone git@github.com:YOUR_GIT_USERNAME/batterylearn.git`
+- Enter the directory `cd batterylearn`
+- Add upstream repo `git remote add upstream https://github.com/tonylee2016/batterylearn`
 
 ## Setting up your own virtual environment
 
