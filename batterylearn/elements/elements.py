@@ -32,8 +32,8 @@ class Container:
 
 
 class Dynamical:
-    """class for modeling a dynamical system
-    """
+    """class for modeling a dynamical system"""
+
     def __init__(self, dimension: int = None, x0=None):
         if x0:
             self.x = x0
@@ -44,8 +44,7 @@ class Dynamical:
 
     @abstractmethod
     def ode(self, **kwargs):
-        """the ordinary differential equation that describes system dynamics
-        """
+        """the ordinary differential equation that describes system dynamics"""
         pass
 
     @abstractmethod
@@ -60,13 +59,21 @@ class LinearTimeInvariant(Dynamical):
     """linear system
 
     Args:
-        A (np.matrix): _description_ 
+        A (np.matrix): _description_
         B (np.array): _description_
         C (np.array, optional): _description_. Defaults to None.
         D (np.array, optional): _description_. Defaults to None.
         x0 (np.array, optional): _description_. Defaults to None.
     """
-    def __init__(self, A:np.matrix, B:np.array, C:np.array=None, D:np.array=None, x0:np.array=None):
+
+    def __init__(
+        self,
+        A: np.ndarray,
+        B: np.ndarray,
+        C: np.ndarray = None,
+        D: np.ndarray = None,
+        x0: np.ndarray = None,
+    ):
 
         self.A = A
         self.B = B
@@ -92,7 +99,7 @@ class NonlinearSystem:
 
 class Mechanical(Dynamical):
 
-    """The mechanical system, which uses KCM (genertic, nonlinear) parameters 
+    """The mechanical system, which uses KCM (genertic, nonlinear) parameters
 
     Args:
         K (np.array): stiffness array
@@ -123,7 +130,7 @@ class Mechanical(Dynamical):
 
 class LinearMechanical(LinearTimeInvariant):
 
-    """The linear mechanical system, which uses KCM parameters 
+    """The linear mechanical system, which uses KCM parameters
 
     Args:
         K (np.array): stiffness array
@@ -132,7 +139,9 @@ class LinearMechanical(LinearTimeInvariant):
         x0 (np.array, optional): initial conditons. Defaults to None.
     """
 
-    def __init__(self, K:np.array, C:np.array, M:np.array, x0:np.array=None):
+    def __init__(
+        self, K: np.ndarray, C: np.ndarray, M: np.ndarray, x0: np.ndarray = None
+    ):
         if K.shape != C.shape or K.shape != M.shape:
             ValueError(
                 "the input K-C-M parameters should have the same dimension"

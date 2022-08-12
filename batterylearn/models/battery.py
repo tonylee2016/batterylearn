@@ -15,7 +15,8 @@ class OCV(Base):
         soc (list, optional): _description_. Defaults to [ 3.3, 3.5, 3.55, 3.6, 3.65, 3.68, 3.70, 3.8, 3.95, 4.0, 4.1, ].
         ocv (list, optional): _description_. Defaults to [ 0.0, 10.0, 20.0, 30.0, 40.0, 50.0, 60.0, 70.0, 80.0, 90.0, 100.0, ].
 
-    """    """"""
+    """ """"""
+
     def __init__(
         self,
         name,
@@ -51,8 +52,7 @@ class OCV(Base):
         self.soc = soc
 
     def display(self):
-        """plot the soc-ocv curve
-        """
+        """plot the soc-ocv curve"""
         plt.figure()
         plt.xlabel("soc")
         plt.ylabel("ocv")
@@ -60,7 +60,7 @@ class OCV(Base):
         plt.plot(self.soc, self.ocv)
         plt.show()
 
-    def soc2ocv(self, soc:float) -> float:
+    def soc2ocv(self, soc: float):
         """ocv lookup
 
         Args:
@@ -80,6 +80,7 @@ class EcmCell(Base, Dynamical):
         parameters (dict, optional): dict of parameters . Defaults to None.
         curve (OCV, optional): the soc-ocv curve. Defaults to OCV("default").
     """
+
     def __init__(
         self, name, parameters: dict = None, curve: OCV = OCV("default")
     ):
@@ -100,15 +101,15 @@ class EcmCell(Base, Dynamical):
         self.__parameters = parameters
         self.ocv_curve = curve
 
-    def update_rpm(self, prm:dict):
+    def update_rpm(self, prm: dict):
         """update thee parameter for the cell
 
         Args:
-            prm (dict): new parameter dictionary 
+            prm (dict): new parameter dictionary
         """
         self.__parameters = prm
 
-    def prm(self, name:str)->float:
+    def prm(self, name: str) -> float:
         """fetch parameter
 
         Args:
@@ -119,7 +120,7 @@ class EcmCell(Base, Dynamical):
         """
         return self.__parameters[name]
 
-    def ode(self, t, x, current_series)->np.ndarray:
+    def ode(self, t, x, current_series):
         """_summary_
 
         Args:
@@ -157,7 +158,7 @@ class EcmCell(Base, Dynamical):
 
         return np.array([du1, du2, dSoC])
 
-    def out(self, current:np.ndarray, x:np.ndarray)->np.ndarray:
+    def out(self, current, x):
         """output calculation for the cell model
 
         Args:
@@ -176,8 +177,7 @@ class EcmCell(Base, Dynamical):
         return vt
 
     def display(self):
-        """display the ECM cell model w/ schemdraw
-        """
+        """display the ECM cell model w/ schemdraw"""
         with Drawing() as d:
             d.push()
             d += elm.BatteryCell().up()

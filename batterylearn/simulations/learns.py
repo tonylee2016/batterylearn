@@ -1,20 +1,21 @@
 # import matplotlib.pyplot as plt
+import numpy as np
 from scipy.optimize import (
     differential_evolution,
     least_squares,
     minimize,
     shgo,
 )
-from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 from sklearn.base import BaseEstimator
+from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
+
 from .simulations import Simulator
-import numpy as np
 
 
-class Learner(Simulator,BaseEstimator):
+class Learner(Simulator, BaseEstimator):
     """
     a wrapper for model training
-    
+
     """
 
     def __init__(self, name):
@@ -25,7 +26,14 @@ class Learner(Simulator,BaseEstimator):
         """
         Simulator.__init__(self, name=name)
 
-    def fit_parameters(self, names:tuple, config:dict, x0:np.array, solver:str, bounds:tuple):
+    def fit_parameters(
+        self,
+        names: tuple,
+        config: dict,
+        x0: np.ndarray,
+        solver: str,
+        bounds:tuple,
+    ):
         """_summary_
 
         Args:
@@ -37,12 +45,12 @@ class Learner(Simulator,BaseEstimator):
 
         Returns:
             solution: fitting solutions
-        """        """"""
-    
+        """ """"""
+
         # s_sim = self.get(names[2])
         m_sim = self.get(names[0])
 
-        CONST_BOUNDS = (
+        CONST_BOUNDS_1 = (
             (0, 1),
             (0, 1),
             (0, 1),
@@ -64,8 +72,8 @@ class Learner(Simulator,BaseEstimator):
 
         if solver == "ls":
             CONST_BOUNDS = (
-                [i[0] for i in CONST_BOUNDS],
-                [i[1] for i in CONST_BOUNDS],
+                [i[0] for i in CONST_BOUNDS_1],
+                [i[1] for i in CONST_BOUNDS_1],
             )
             res = least_squares(
                 self.residuals,
