@@ -1,0 +1,1761 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
+    
+    
+      
+        <title>models - batterylearn</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.1d29e8d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#batterylearn.models" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="batterylearn" class="md-header__button md-logo" aria-label="batterylearn" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            batterylearn
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              models
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="batterylearn" class="md-nav__button md-logo" aria-label="batterylearn" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    batterylearn
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notebook/param_extraction_charging/" class="md-nav__link">
+        Example [parameter extraction]
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notebook/simulation/" class="md-nav__link">
+        Example [simulation]
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../elements/" class="md-nav__link">
+        elements
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          models
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        models
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#batterylearn.models" class="md-nav__link">
+    batterylearn.models
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#batterylearn.models.EcmCell" class="md-nav__link">
+    EcmCell
+  </a>
+  
+    <nav class="md-nav" aria-label="EcmCell">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#batterylearn.models.battery.EcmCell.display" class="md-nav__link">
+    display()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batterylearn.models.battery.EcmCell.ode" class="md-nav__link">
+    ode()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batterylearn.models.battery.EcmCell.out" class="md-nav__link">
+    out()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batterylearn.models.battery.EcmCell.prm" class="md-nav__link">
+    prm()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batterylearn.models.battery.EcmCell.update_rpm" class="md-nav__link">
+    update_rpm()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#batterylearn.models.OCV" class="md-nav__link">
+    OCV
+  </a>
+  
+    <nav class="md-nav" aria-label="OCV">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#batterylearn.models.battery.OCV.display" class="md-nav__link">
+    display()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batterylearn.models.battery.OCV.soc2ocv" class="md-nav__link">
+    soc2ocv()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#batterylearn.models" class="md-nav__link">
+    batterylearn.models
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#batterylearn.models.EcmCell" class="md-nav__link">
+    EcmCell
+  </a>
+  
+    <nav class="md-nav" aria-label="EcmCell">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#batterylearn.models.battery.EcmCell.display" class="md-nav__link">
+    display()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batterylearn.models.battery.EcmCell.ode" class="md-nav__link">
+    ode()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batterylearn.models.battery.EcmCell.out" class="md-nav__link">
+    out()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batterylearn.models.battery.EcmCell.prm" class="md-nav__link">
+    prm()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batterylearn.models.battery.EcmCell.update_rpm" class="md-nav__link">
+    update_rpm()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#batterylearn.models.OCV" class="md-nav__link">
+    OCV
+  </a>
+  
+    <nav class="md-nav" aria-label="OCV">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#batterylearn.models.battery.OCV.display" class="md-nav__link">
+    display()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batterylearn.models.battery.OCV.soc2ocv" class="md-nav__link">
+    soc2ocv()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+  <h1>models</h1>
+
+<div class="doc doc-object doc-module">
+
+
+<a id="batterylearn.models"></a>
+  <div class="doc doc-contents first">
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="batterylearn.models.EcmCell" class="doc doc-heading">
+        <code>EcmCell</code>
+
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+      <p class="doc doc-class-bases">
+        Bases: <code><span title="batterylearn.elements.Base">Base</span></code>, <code><a class="autorefs autorefs-internal" title="batterylearn.elements.Dynamical" href="../elements/#batterylearn.elements.Dynamical">Dynamical</a></code></p>
+
+  
+      <p>ECM mode for single cell</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>name</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td><p>name of the cell</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>parameters</code></td>
+          <td>
+                <code>dict</code>
+          </td>
+          <td><p>dict of parameters . Defaults to None.</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>curve</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="batterylearn.models.battery.OCV" href="#batterylearn.models.OCV">OCV</a></code>
+          </td>
+          <td><p>the soc-ocv curve. Defaults to OCV("default").</p></td>
+          <td>
+                <code>OCV(&#39;default&#39;)</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        <details class="quote">
+          <summary>Source code in <code>batterylearn/models/battery.py</code></summary>
+          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span>
+<span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span>
+<span class="normal">173</span>
+<span class="normal">174</span>
+<span class="normal">175</span>
+<span class="normal">176</span>
+<span class="normal">177</span>
+<span class="normal">178</span>
+<span class="normal">179</span>
+<span class="normal">180</span>
+<span class="normal">181</span>
+<span class="normal">182</span>
+<span class="normal">183</span>
+<span class="normal">184</span>
+<span class="normal">185</span>
+<span class="normal">186</span>
+<span class="normal">187</span>
+<span class="normal">188</span>
+<span class="normal">189</span>
+<span class="normal">190</span>
+<span class="normal">191</span>
+<span class="normal">192</span>
+<span class="normal">193</span>
+<span class="normal">194</span>
+<span class="normal">195</span>
+<span class="normal">196</span>
+<span class="normal">197</span>
+<span class="normal">198</span>
+<span class="normal">199</span>
+<span class="normal">200</span>
+<span class="normal">201</span>
+<span class="normal">202</span>
+<span class="normal">203</span>
+<span class="normal">204</span>
+<span class="normal">205</span>
+<span class="normal">206</span>
+<span class="normal">207</span>
+<span class="normal">208</span>
+<span class="normal">209</span>
+<span class="normal">210</span>
+<span class="normal">211</span>
+<span class="normal">212</span>
+<span class="normal">213</span>
+<span class="normal">214</span>
+<span class="normal">215</span>
+<span class="normal">216</span>
+<span class="normal">217</span>
+<span class="normal">218</span>
+<span class="normal">219</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">EcmCell</span><span class="p">(</span><span class="n">Base</span><span class="p">,</span> <span class="n">Dynamical</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;ECM mode for single cell</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        name (str): name of the cell</span>
+<span class="sd">        parameters (dict, optional): dict of parameters . Defaults to None.</span>
+<span class="sd">        curve (OCV, optional): the soc-ocv curve. Defaults to OCV(&quot;default&quot;).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">parameters</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">curve</span><span class="p">:</span> <span class="n">OCV</span> <span class="o">=</span> <span class="n">OCV</span><span class="p">(</span><span class="s2">&quot;default&quot;</span><span class="p">)</span>
+    <span class="p">):</span>
+        <span class="n">Base</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;EMC_Cell_Model&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">)</span>
+        <span class="n">Dynamical</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">parameters</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">parameters</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="s2">&quot;R0&quot;</span><span class="p">:</span> <span class="mf">0.05</span><span class="p">,</span>
+                <span class="s2">&quot;R1&quot;</span><span class="p">:</span> <span class="mf">0.022</span><span class="p">,</span>
+                <span class="s2">&quot;tau1&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+                <span class="s2">&quot;R2&quot;</span><span class="p">:</span> <span class="mf">0.019</span><span class="p">,</span>
+                <span class="s2">&quot;tau2&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                <span class="s2">&quot;CAP&quot;</span><span class="p">:</span> <span class="mf">1.1</span><span class="p">,</span>
+                <span class="s2">&quot;ce&quot;</span><span class="p">:</span> <span class="mf">0.99</span><span class="p">,</span>
+                <span class="s2">&quot;v_limits&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">],</span>
+                <span class="s2">&quot;SOC_RANGE&quot;</span><span class="p">:</span> <span class="p">[</span><span class="o">-</span><span class="mf">5.0</span><span class="p">,</span> <span class="mf">105.0</span><span class="p">],</span>
+            <span class="p">}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__parameters</span> <span class="o">=</span> <span class="n">parameters</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ocv_curve</span> <span class="o">=</span> <span class="n">curve</span>
+
+    <span class="k">def</span> <span class="nf">update_rpm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prm</span><span class="p">:</span><span class="nb">dict</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;update thee parameter for the cell</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            prm (dict): new parameter dictionary </span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__parameters</span> <span class="o">=</span> <span class="n">prm</span>
+
+    <span class="k">def</span> <span class="nf">prm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span><span class="nb">str</span><span class="p">)</span><span class="o">-&gt;</span><span class="nb">float</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;fetch parameter</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            name (str): parameter name</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: returned value</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__parameters</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">ode</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">current_series</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;_summary_</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            t (_type_): t step, used for ode solver only</span>
+<span class="sd">            x (_type_): state variables, used for ode solver only</span>
+<span class="sd">            current_series (_type_): external mapping function for current excitation</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            np.ndarray: dx</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">current</span> <span class="o">=</span> <span class="n">current_series</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+
+        <span class="c1"># dSoC/dt</span>
+
+        <span class="c1"># SOC constrain</span>
+
+        <span class="k">if</span> <span class="n">current</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">prm</span><span class="p">(</span><span class="s2">&quot;SOC_RANGE&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]:</span>
+            <span class="n">dSoC</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">prm</span><span class="p">(</span><span class="s2">&quot;CAP&quot;</span><span class="p">)</span> <span class="o">*</span> <span class="n">current</span> <span class="o">/</span> <span class="mi">36</span>
+        <span class="k">elif</span> <span class="n">current</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">prm</span><span class="p">(</span><span class="s2">&quot;SOC_RANGE&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]:</span>
+            <span class="n">dSoC</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">prm</span><span class="p">(</span><span class="s2">&quot;CAP&quot;</span><span class="p">)</span> <span class="o">*</span> <span class="n">current</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">prm</span><span class="p">(</span><span class="s2">&quot;ce&quot;</span><span class="p">)</span> <span class="o">/</span> <span class="mi">36</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">dSoC</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+        <span class="c1"># dU/dt*C + u/R = i</span>
+        <span class="n">du1</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">current</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">prm</span><span class="p">(</span><span class="s2">&quot;tau1&quot;</span><span class="p">)</span> <span class="o">/</span> <span class="mf">60.0</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">prm</span><span class="p">(</span><span class="s2">&quot;R1&quot;</span><span class="p">)</span>
+            <span class="o">-</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">prm</span><span class="p">(</span><span class="s2">&quot;tau1&quot;</span><span class="p">)</span> <span class="o">/</span> <span class="mf">60.0</span>
+        <span class="p">)</span>
+        <span class="c1"># dU2/dt</span>
+        <span class="n">du2</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">current</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">prm</span><span class="p">(</span><span class="s2">&quot;tau2&quot;</span><span class="p">)</span> <span class="o">/</span> <span class="mf">3600.0</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">prm</span><span class="p">(</span><span class="s2">&quot;R2&quot;</span><span class="p">)</span>
+            <span class="o">-</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">prm</span><span class="p">(</span><span class="s2">&quot;tau2&quot;</span><span class="p">)</span> <span class="o">/</span> <span class="mf">3600.0</span>
+        <span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">du1</span><span class="p">,</span> <span class="n">du2</span><span class="p">,</span> <span class="n">dSoC</span><span class="p">])</span>
+
+    <span class="k">def</span> <span class="nf">out</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">current</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;output calculation for the cell model</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            current (np.ndarray): current excitation</span>
+<span class="sd">            x (np.ndarray): state variables, from the ode solution</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            np.ndarray: terminal voltage</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">vt</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">ocv_curve</span><span class="o">.</span><span class="n">soc2ocv</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+            <span class="o">-</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="o">-</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+            <span class="o">-</span> <span class="n">current</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">prm</span><span class="p">(</span><span class="s2">&quot;R0&quot;</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">vt</span>
+
+    <span class="k">def</span> <span class="nf">display</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;display the ECM cell model w/ schemdraw</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">with</span> <span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
+            <span class="n">d</span><span class="o">.</span><span class="n">push</span><span class="p">()</span>
+            <span class="n">d</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">BatteryCell</span><span class="p">()</span><span class="o">.</span><span class="n">up</span><span class="p">()</span>
+            <span class="n">d</span> <span class="o">+=</span> <span class="p">(</span>
+                <span class="n">R0</span> <span class="o">:=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Resistor</span><span class="p">()</span>
+                <span class="o">.</span><span class="n">right</span><span class="p">()</span>
+                <span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{0:.3e}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">prm</span><span class="p">(</span><span class="s2">&quot;R0&quot;</span><span class="p">)))</span>
+            <span class="p">)</span>
+            <span class="n">d</span> <span class="o">+=</span> <span class="p">(</span>
+                <span class="n">elm</span><span class="o">.</span><span class="n">CurrentLabel</span><span class="p">(</span><span class="n">top</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">ofst</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+                <span class="o">.</span><span class="n">right</span><span class="p">()</span>
+                <span class="o">.</span><span class="n">at</span><span class="p">(</span><span class="n">R0</span><span class="p">)</span>
+            <span class="p">)</span>
+            <span class="n">d</span><span class="o">.</span><span class="n">push</span><span class="p">()</span>
+            <span class="n">d</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Resistor</span><span class="p">()</span><span class="o">.</span><span class="n">right</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{0:.3e}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">prm</span><span class="p">(</span><span class="s2">&quot;R1&quot;</span><span class="p">)))</span>
+            <span class="n">d</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+            <span class="n">d</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">(</span><span class="n">l</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span><span class="o">.</span><span class="n">down</span><span class="p">()</span>
+            <span class="n">d</span> <span class="o">+=</span> <span class="p">(</span>
+                <span class="n">elm</span><span class="o">.</span><span class="n">Capacitor</span><span class="p">()</span>
+                <span class="o">.</span><span class="n">right</span><span class="p">()</span>
+                <span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{0:.3e}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">prm</span><span class="p">(</span><span class="s2">&quot;tau1&quot;</span><span class="p">)</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">prm</span><span class="p">(</span><span class="s2">&quot;R1&quot;</span><span class="p">)))</span>
+            <span class="p">)</span>
+            <span class="n">d</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">(</span><span class="n">l</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span><span class="o">.</span><span class="n">up</span><span class="p">()</span>
+            <span class="n">d</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">(</span><span class="n">l</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span><span class="o">.</span><span class="n">right</span><span class="p">()</span>
+            <span class="n">d</span><span class="o">.</span><span class="n">push</span><span class="p">()</span>
+            <span class="n">d</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Resistor</span><span class="p">()</span><span class="o">.</span><span class="n">right</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{0:.3e}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">prm</span><span class="p">(</span><span class="s2">&quot;R2&quot;</span><span class="p">)))</span>
+            <span class="n">d</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+            <span class="n">d</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">(</span><span class="n">l</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span><span class="o">.</span><span class="n">down</span><span class="p">()</span>
+            <span class="n">d</span> <span class="o">+=</span> <span class="p">(</span>
+                <span class="n">elm</span><span class="o">.</span><span class="n">Capacitor</span><span class="p">()</span>
+                <span class="o">.</span><span class="n">right</span><span class="p">()</span>
+                <span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{0:.3e}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">prm</span><span class="p">(</span><span class="s2">&quot;tau2&quot;</span><span class="p">)</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">prm</span><span class="p">(</span><span class="s2">&quot;R2&quot;</span><span class="p">)))</span>
+            <span class="p">)</span>
+            <span class="n">d</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">(</span><span class="n">l</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span><span class="o">.</span><span class="n">up</span><span class="p">()</span>
+            <span class="n">d</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">(</span><span class="n">l</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">right</span><span class="p">()</span>
+            <span class="n">d</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Dot</span><span class="p">()</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>
+            <span class="n">d</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+            <span class="n">d</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">(</span><span class="n">l</span><span class="o">=</span><span class="mf">11.5</span><span class="p">)</span><span class="o">.</span><span class="n">right</span><span class="p">()</span>
+            <span class="n">d</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Dot</span><span class="p">()</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+        </details>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="batterylearn.models.battery.EcmCell.display" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">display</span><span class="p">()</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>display the ECM cell model w/ schemdraw</p>
+
+      <details class="quote">
+        <summary>Source code in <code>batterylearn/models/battery.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">178</span>
+<span class="normal">179</span>
+<span class="normal">180</span>
+<span class="normal">181</span>
+<span class="normal">182</span>
+<span class="normal">183</span>
+<span class="normal">184</span>
+<span class="normal">185</span>
+<span class="normal">186</span>
+<span class="normal">187</span>
+<span class="normal">188</span>
+<span class="normal">189</span>
+<span class="normal">190</span>
+<span class="normal">191</span>
+<span class="normal">192</span>
+<span class="normal">193</span>
+<span class="normal">194</span>
+<span class="normal">195</span>
+<span class="normal">196</span>
+<span class="normal">197</span>
+<span class="normal">198</span>
+<span class="normal">199</span>
+<span class="normal">200</span>
+<span class="normal">201</span>
+<span class="normal">202</span>
+<span class="normal">203</span>
+<span class="normal">204</span>
+<span class="normal">205</span>
+<span class="normal">206</span>
+<span class="normal">207</span>
+<span class="normal">208</span>
+<span class="normal">209</span>
+<span class="normal">210</span>
+<span class="normal">211</span>
+<span class="normal">212</span>
+<span class="normal">213</span>
+<span class="normal">214</span>
+<span class="normal">215</span>
+<span class="normal">216</span>
+<span class="normal">217</span>
+<span class="normal">218</span>
+<span class="normal">219</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">display</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;display the ECM cell model w/ schemdraw</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">with</span> <span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
+        <span class="n">d</span><span class="o">.</span><span class="n">push</span><span class="p">()</span>
+        <span class="n">d</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">BatteryCell</span><span class="p">()</span><span class="o">.</span><span class="n">up</span><span class="p">()</span>
+        <span class="n">d</span> <span class="o">+=</span> <span class="p">(</span>
+            <span class="n">R0</span> <span class="o">:=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Resistor</span><span class="p">()</span>
+            <span class="o">.</span><span class="n">right</span><span class="p">()</span>
+            <span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{0:.3e}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">prm</span><span class="p">(</span><span class="s2">&quot;R0&quot;</span><span class="p">)))</span>
+        <span class="p">)</span>
+        <span class="n">d</span> <span class="o">+=</span> <span class="p">(</span>
+            <span class="n">elm</span><span class="o">.</span><span class="n">CurrentLabel</span><span class="p">(</span><span class="n">top</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">ofst</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">right</span><span class="p">()</span>
+            <span class="o">.</span><span class="n">at</span><span class="p">(</span><span class="n">R0</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">d</span><span class="o">.</span><span class="n">push</span><span class="p">()</span>
+        <span class="n">d</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Resistor</span><span class="p">()</span><span class="o">.</span><span class="n">right</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{0:.3e}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">prm</span><span class="p">(</span><span class="s2">&quot;R1&quot;</span><span class="p">)))</span>
+        <span class="n">d</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+        <span class="n">d</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">(</span><span class="n">l</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span><span class="o">.</span><span class="n">down</span><span class="p">()</span>
+        <span class="n">d</span> <span class="o">+=</span> <span class="p">(</span>
+            <span class="n">elm</span><span class="o">.</span><span class="n">Capacitor</span><span class="p">()</span>
+            <span class="o">.</span><span class="n">right</span><span class="p">()</span>
+            <span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{0:.3e}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">prm</span><span class="p">(</span><span class="s2">&quot;tau1&quot;</span><span class="p">)</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">prm</span><span class="p">(</span><span class="s2">&quot;R1&quot;</span><span class="p">)))</span>
+        <span class="p">)</span>
+        <span class="n">d</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">(</span><span class="n">l</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span><span class="o">.</span><span class="n">up</span><span class="p">()</span>
+        <span class="n">d</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">(</span><span class="n">l</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span><span class="o">.</span><span class="n">right</span><span class="p">()</span>
+        <span class="n">d</span><span class="o">.</span><span class="n">push</span><span class="p">()</span>
+        <span class="n">d</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Resistor</span><span class="p">()</span><span class="o">.</span><span class="n">right</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{0:.3e}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">prm</span><span class="p">(</span><span class="s2">&quot;R2&quot;</span><span class="p">)))</span>
+        <span class="n">d</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+        <span class="n">d</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">(</span><span class="n">l</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span><span class="o">.</span><span class="n">down</span><span class="p">()</span>
+        <span class="n">d</span> <span class="o">+=</span> <span class="p">(</span>
+            <span class="n">elm</span><span class="o">.</span><span class="n">Capacitor</span><span class="p">()</span>
+            <span class="o">.</span><span class="n">right</span><span class="p">()</span>
+            <span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{0:.3e}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">prm</span><span class="p">(</span><span class="s2">&quot;tau2&quot;</span><span class="p">)</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">prm</span><span class="p">(</span><span class="s2">&quot;R2&quot;</span><span class="p">)))</span>
+        <span class="p">)</span>
+        <span class="n">d</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">(</span><span class="n">l</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span><span class="o">.</span><span class="n">up</span><span class="p">()</span>
+        <span class="n">d</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">(</span><span class="n">l</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">right</span><span class="p">()</span>
+        <span class="n">d</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Dot</span><span class="p">()</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>
+        <span class="n">d</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+        <span class="n">d</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">(</span><span class="n">l</span><span class="o">=</span><span class="mf">11.5</span><span class="p">)</span><span class="o">.</span><span class="n">right</span><span class="p">()</span>
+        <span class="n">d</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Dot</span><span class="p">()</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="batterylearn.models.battery.EcmCell.ode" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">ode</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">current_series</span><span class="p">)</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p><em>summary</em></p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>t</code></td>
+          <td>
+                <code>_type_</code>
+          </td>
+          <td><p>t step, used for ode solver only</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>x</code></td>
+          <td>
+                <code>_type_</code>
+          </td>
+          <td><p>state variables, used for ode solver only</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>current_series</code></td>
+          <td>
+                <code>_type_</code>
+          </td>
+          <td><p>external mapping function for current excitation</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><span title="numpy">np</span>.<span title="numpy.ndarray">ndarray</span></code>
+          </td>
+          <td><p>np.ndarray: dx</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>batterylearn/models/battery.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">ode</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">current_series</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;_summary_</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        t (_type_): t step, used for ode solver only</span>
+<span class="sd">        x (_type_): state variables, used for ode solver only</span>
+<span class="sd">        current_series (_type_): external mapping function for current excitation</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        np.ndarray: dx</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">current</span> <span class="o">=</span> <span class="n">current_series</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+
+    <span class="c1"># dSoC/dt</span>
+
+    <span class="c1"># SOC constrain</span>
+
+    <span class="k">if</span> <span class="n">current</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">prm</span><span class="p">(</span><span class="s2">&quot;SOC_RANGE&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]:</span>
+        <span class="n">dSoC</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">prm</span><span class="p">(</span><span class="s2">&quot;CAP&quot;</span><span class="p">)</span> <span class="o">*</span> <span class="n">current</span> <span class="o">/</span> <span class="mi">36</span>
+    <span class="k">elif</span> <span class="n">current</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">prm</span><span class="p">(</span><span class="s2">&quot;SOC_RANGE&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]:</span>
+        <span class="n">dSoC</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">prm</span><span class="p">(</span><span class="s2">&quot;CAP&quot;</span><span class="p">)</span> <span class="o">*</span> <span class="n">current</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">prm</span><span class="p">(</span><span class="s2">&quot;ce&quot;</span><span class="p">)</span> <span class="o">/</span> <span class="mi">36</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">dSoC</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+    <span class="c1"># dU/dt*C + u/R = i</span>
+    <span class="n">du1</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">current</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">prm</span><span class="p">(</span><span class="s2">&quot;tau1&quot;</span><span class="p">)</span> <span class="o">/</span> <span class="mf">60.0</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">prm</span><span class="p">(</span><span class="s2">&quot;R1&quot;</span><span class="p">)</span>
+        <span class="o">-</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">prm</span><span class="p">(</span><span class="s2">&quot;tau1&quot;</span><span class="p">)</span> <span class="o">/</span> <span class="mf">60.0</span>
+    <span class="p">)</span>
+    <span class="c1"># dU2/dt</span>
+    <span class="n">du2</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">current</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">prm</span><span class="p">(</span><span class="s2">&quot;tau2&quot;</span><span class="p">)</span> <span class="o">/</span> <span class="mf">3600.0</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">prm</span><span class="p">(</span><span class="s2">&quot;R2&quot;</span><span class="p">)</span>
+        <span class="o">-</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">prm</span><span class="p">(</span><span class="s2">&quot;tau2&quot;</span><span class="p">)</span> <span class="o">/</span> <span class="mf">3600.0</span>
+    <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">du1</span><span class="p">,</span> <span class="n">du2</span><span class="p">,</span> <span class="n">dSoC</span><span class="p">])</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="batterylearn.models.battery.EcmCell.out" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">out</span><span class="p">(</span><span class="n">current</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>output calculation for the cell model</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>current</code></td>
+          <td>
+                <code><span title="numpy">np</span>.<span title="numpy.ndarray">ndarray</span></code>
+          </td>
+          <td><p>current excitation</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>x</code></td>
+          <td>
+                <code><span title="numpy">np</span>.<span title="numpy.ndarray">ndarray</span></code>
+          </td>
+          <td><p>state variables, from the ode solution</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><span title="numpy">np</span>.<span title="numpy.ndarray">ndarray</span></code>
+          </td>
+          <td><p>np.ndarray: terminal voltage</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>batterylearn/models/battery.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span>
+<span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span>
+<span class="normal">173</span>
+<span class="normal">174</span>
+<span class="normal">175</span>
+<span class="normal">176</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">out</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">current</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;output calculation for the cell model</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        current (np.ndarray): current excitation</span>
+<span class="sd">        x (np.ndarray): state variables, from the ode solution</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        np.ndarray: terminal voltage</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">vt</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ocv_curve</span><span class="o">.</span><span class="n">soc2ocv</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+        <span class="o">-</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="o">-</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="o">-</span> <span class="n">current</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">prm</span><span class="p">(</span><span class="s2">&quot;R0&quot;</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">vt</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="batterylearn.models.battery.EcmCell.prm" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">prm</span><span class="p">(</span><span class="n">name</span><span class="p">)</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>fetch parameter</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>name</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td><p>parameter name</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>float</code></td>          <td>
+                <code>float</code>
+          </td>
+          <td><p>returned value</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>batterylearn/models/battery.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">prm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span><span class="nb">str</span><span class="p">)</span><span class="o">-&gt;</span><span class="nb">float</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;fetch parameter</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        name (str): parameter name</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        float: returned value</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__parameters</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="batterylearn.models.battery.EcmCell.update_rpm" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">update_rpm</span><span class="p">(</span><span class="n">prm</span><span class="p">)</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>update thee parameter for the cell</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>prm</code></td>
+          <td>
+                <code>dict</code>
+          </td>
+          <td><p>new parameter dictionary</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>batterylearn/models/battery.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">update_rpm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prm</span><span class="p">:</span><span class="nb">dict</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;update thee parameter for the cell</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        prm (dict): new parameter dictionary </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">__parameters</span> <span class="o">=</span> <span class="n">prm</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="batterylearn.models.OCV" class="doc doc-heading">
+        <code>OCV</code>
+
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+      <p class="doc doc-class-bases">
+        Bases: <code><span title="batterylearn.elements.Base">Base</span></code></p>
+
+  
+      <p><em>summary</em></p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>name</code></td>
+          <td>
+                <code>_type_</code>
+          </td>
+          <td><p><em>description</em></p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>soc</code></td>
+          <td>
+                <code>list</code>
+          </td>
+          <td><p><em>description</em>. Defaults to [ 3.3, 3.5, 3.55, 3.6, 3.65, 3.68, 3.70, 3.8, 3.95, 4.0, 4.1, ].</p></td>
+          <td>
+                <code>[3.3, 3.5, 3.55, 3.6, 3.65, 3.68, 3.7, 3.8, 3.95, 4.0, 4.1]</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>ocv</code></td>
+          <td>
+                <code>list</code>
+          </td>
+          <td><p><em>description</em>. Defaults to [ 0.0, 10.0, 20.0, 30.0, 40.0, 50.0, 60.0, 70.0, 80.0, 90.0, 100.0, ].</p></td>
+          <td>
+                <code>[0.0, 10.0, 20.0, 30.0, 40.0, 50.0, 60.0, 70.0, 80.0, 90.0, 100.0]</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        <details class="quote">
+          <summary>Source code in <code>batterylearn/models/battery.py</code></summary>
+          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">OCV</span><span class="p">(</span><span class="n">Base</span><span class="p">):</span>
+
+    <span class="sd">&quot;&quot;&quot;_summary_</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        name (_type_): _description_</span>
+<span class="sd">        soc (list, optional): _description_. Defaults to [ 3.3, 3.5, 3.55, 3.6, 3.65, 3.68, 3.70, 3.8, 3.95, 4.0, 4.1, ].</span>
+<span class="sd">        ocv (list, optional): _description_. Defaults to [ 0.0, 10.0, 20.0, 30.0, 40.0, 50.0, 60.0, 70.0, 80.0, 90.0, 100.0, ].</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>    <span class="s2">&quot;&quot;&quot;&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">name</span><span class="p">,</span>
+        <span class="n">soc</span><span class="p">:</span> <span class="nb">list</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="mf">3.3</span><span class="p">,</span>
+            <span class="mf">3.5</span><span class="p">,</span>
+            <span class="mf">3.55</span><span class="p">,</span>
+            <span class="mf">3.6</span><span class="p">,</span>
+            <span class="mf">3.65</span><span class="p">,</span>
+            <span class="mf">3.68</span><span class="p">,</span>
+            <span class="mf">3.70</span><span class="p">,</span>
+            <span class="mf">3.8</span><span class="p">,</span>
+            <span class="mf">3.95</span><span class="p">,</span>
+            <span class="mf">4.0</span><span class="p">,</span>
+            <span class="mf">4.1</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="n">ocv</span><span class="p">:</span> <span class="nb">list</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="mf">0.0</span><span class="p">,</span>
+            <span class="mf">10.0</span><span class="p">,</span>
+            <span class="mf">20.0</span><span class="p">,</span>
+            <span class="mf">30.0</span><span class="p">,</span>
+            <span class="mf">40.0</span><span class="p">,</span>
+            <span class="mf">50.0</span><span class="p">,</span>
+            <span class="mf">60.0</span><span class="p">,</span>
+            <span class="mf">70.0</span><span class="p">,</span>
+            <span class="mf">80.0</span><span class="p">,</span>
+            <span class="mf">90.0</span><span class="p">,</span>
+            <span class="mf">100.0</span><span class="p">,</span>
+        <span class="p">],</span>
+    <span class="p">):</span>
+        <span class="n">Base</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;soc_ocv_curve&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ocv</span> <span class="o">=</span> <span class="n">ocv</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">soc</span> <span class="o">=</span> <span class="n">soc</span>
+
+    <span class="k">def</span> <span class="nf">display</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;plot the soc-ocv curve</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;soc&quot;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;ocv&quot;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;curve&quot;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">soc</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">ocv</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">soc2ocv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">soc</span><span class="p">:</span><span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;ocv lookup</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            soc (float):</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            ocv (float):</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">soc</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">soc</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">ocv</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+        </details>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="batterylearn.models.battery.OCV.display" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">display</span><span class="p">()</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>plot the soc-ocv curve</p>
+
+      <details class="quote">
+        <summary>Source code in <code>batterylearn/models/battery.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">display</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;plot the soc-ocv curve</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;soc&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;ocv&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;curve&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">soc</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">ocv</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="batterylearn.models.battery.OCV.soc2ocv" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">soc2ocv</span><span class="p">(</span><span class="n">soc</span><span class="p">)</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>ocv lookup</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>soc</code></td>
+          <td>
+                <code>float</code>
+          </td>
+          <td></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>ocv</code></td>          <td>
+                <code>float</code>
+          </td>
+          <td></td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>batterylearn/models/battery.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">soc2ocv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">soc</span><span class="p">:</span><span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;ocv lookup</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        soc (float):</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        ocv (float):</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">soc</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">soc</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">ocv</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../elements/" class="md-footer__link md-footer__link--prev" aria-label="Previous: elements" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              elements
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+      
+    
+  </body>
+</html>
