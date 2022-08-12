@@ -5,7 +5,7 @@
 
 <!-- Short description -->
 <p align="center">
-   Python based Energy Storage Simulator
+   Python based Battery Simulator
 </p>
 
 <!-- Draw horizontal rule -->
@@ -17,8 +17,9 @@
 |-|-|
 | [Installation](#installation) | pip install batterylearn |
 | [Available features](#available-features) | overview of functionalities |
-| [Documentation](#documentation) | wip |
+| [Documentation](#documentation) | https://tonylee2016.github.io/batterylearn |
 | [Contributing](#contributing) | wip |
+
 
 ## Installation
 
