@@ -6,23 +6,39 @@ from scipy.optimize import (
     shgo,
 )
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
-
+from sklearn.base import BaseEstimator
 from .simulations import Simulator
+import numpy as np
 
 
-class Learner(Simulator):
+class Learner(Simulator,BaseEstimator):
     """
-    input: current, voltage data, SOC-OCV curve, capacity, CE
-    output: the R-C parameters fitted to the data"""
+    a wrapper for model training
+    
+    """
 
     def __init__(self, name):
+        """_summary_
+
+        Args:
+            name (string): name of the learner
+        """
         Simulator.__init__(self, name=name)
 
-    def fit_parameters(self, names, config, x0, solver, bounds):
-        """
-        fit the parameters with least_squares
-        https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.least_squares.html#scipy.optimize.least_squares
-        """
+    def fit_parameters(self, names:tuple, config:dict, x0:np.array, solver:str, bounds:tuple):
+        """_summary_
+
+        Args:
+            names (tuple): init value of parameters
+            config (dict): name of the model and datasets for simulation
+            x0 (np.array): init value of simulation
+            solver (str): solver type ['diff','minimize']
+            bounds (tuple): bounds for the optimizer
+
+        Returns:
+            solution: fitting solutions
+        """        """"""
+    
         # s_sim = self.get(names[2])
         m_sim = self.get(names[0])
 
@@ -98,10 +114,20 @@ class Learner(Simulator):
         return res
 
     def residuals(self, p0, names, config, x0, method, bounds):
+        """_summary_
+
+        Args:
+            p0 (list): init value of parameters
+            names (tuple): name of the model and datasets for simulation
+            config (dict): simulation configuration
+            x0 (list): init value of simulation
+            method (string): optimization method
+            bounds (tuple): optmizer bounds
+
+        Returns:
+            np.array: fitting error
         """
-        vt: array of terminal voltage from data = data.df.vt.to_numpy()
-        p0:init value of parameters
-        """
+
         # build data and ecm then pass to run function
         m = self.get(names[0])
 
@@ -136,14 +162,4 @@ class Learner(Simulator):
             if method in ["minimize"]:
                 print("rmse", res, len(meas_vt), len(sim_vt))
             return res
-        #     res = mean_squared_error(meas_vt, sim_vt, squared=False)
-        #     print("rmse", res, len(meas_vt), len(sim_vt))
-        #     # ax = d1.df[['vt']].plot()
-        #     # d2.df['vt'].plot(ax=ax)
-        #     # plt.show()
-        #     return res
-        # res = abs(meas_vt - sim_vt)
-        # print("diff", res)
-
-        # print("rmse", res, len(meas_vt), len(sim_vt))
         return meas_vt - sim_vt

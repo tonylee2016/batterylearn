@@ -32,6 +32,8 @@ class Container:
 
 
 class Dynamical:
+    """class for modeling a dynamical system
+    """
     def __init__(self, dimension: int = None, x0=None):
         if x0:
             self.x = x0
@@ -42,6 +44,8 @@ class Dynamical:
 
     @abstractmethod
     def ode(self, **kwargs):
+        """the ordinary differential equation that describes system dynamics
+        """
         pass
 
     @abstractmethod
@@ -53,7 +57,17 @@ class Dynamical:
 
 
 class LinearTimeInvariant(Dynamical):
-    def __init__(self, A, B, C=None, D=None, x0=None):
+    """linear system
+
+    Args:
+        A (np.matrix): _description_ 
+        B (np.array): _description_
+        C (np.array, optional): _description_. Defaults to None.
+        D (np.array, optional): _description_. Defaults to None.
+        x0 (np.array, optional): _description_. Defaults to None.
+    """
+    def __init__(self, A:np.matrix, B:np.array, C:np.array=None, D:np.array=None, x0:np.array=None):
+
         self.A = A
         self.B = B
         self.C = C
@@ -77,6 +91,16 @@ class NonlinearSystem:
 
 
 class Mechanical(Dynamical):
+
+    """The mechanical system, which uses KCM (genertic, nonlinear) parameters 
+
+    Args:
+        K (np.array): stiffness array
+        C (np.array): damping array
+        M (np.array): mass/inertia array
+        x0 (np.array, optional): initial conditons. Defaults to None.
+    """
+
     def __init__(self, K, C, M, x0=None):
 
         if K.shape != C.shape or K.shape != M.shape:
@@ -98,7 +122,17 @@ class Mechanical(Dynamical):
 
 
 class LinearMechanical(LinearTimeInvariant):
-    def __init__(self, K, C, M, x0=None):
+
+    """The linear mechanical system, which uses KCM parameters 
+
+    Args:
+        K (np.array): stiffness array
+        C (np.array): damping array
+        M (np.array): mass/inertia array
+        x0 (np.array, optional): initial conditons. Defaults to None.
+    """
+
+    def __init__(self, K:np.array, C:np.array, M:np.array, x0:np.array=None):
         if K.shape != C.shape or K.shape != M.shape:
             ValueError(
                 "the input K-C-M parameters should have the same dimension"

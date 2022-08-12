@@ -1,4 +1,11 @@
 site_name: batterylearn
 nav:
     - Home: index.md
+    - Example [parameter extraction] : notebook/param_extraction_charging.ipynb
+    - Example [simulation]: notebook/simulation.ipynb
+    - elements: elements.md
+    - models: models.md
 theme: material
+plugins:
+  - mkdocstrings
+  - mkdocs-jupyter
