@@ -2,7 +2,6 @@ import numpy as np
 import pandas as pd
 import os
 from batterylearn.models import OCV, EcmCell
-from batterylearn.utilities import ivp
 from batterylearn.simulations import Simulator, Data, Current
 import matplotlib.pyplot as plt
 from scipy import optimize

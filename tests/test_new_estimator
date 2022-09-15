@@ -1,0 +1,10 @@
+from batterylearn.models import OCV, EcmCell
+from batterylearn.simulations import LearnerSk
+import numpy as np
+from sklearn.utils.estimator_checks import check_estimator
+from sklearn.base import BaseEstimator
+
+
+a = LearnerSk()
+b = check_estimator(a)
+pass
