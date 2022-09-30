@@ -50,7 +50,7 @@ class Learner(Simulator, BaseEstimator):
         # s_sim = self.get(names[2])
         m_sim = self.get(names[0])
 
-        CONST_BOUNDS_1 = (
+        CONST_BOUNDS = (
             (0, 1),
             (0, 1),
             (0, 1),
@@ -72,8 +72,8 @@ class Learner(Simulator, BaseEstimator):
 
         if solver == "ls":
             CONST_BOUNDS = (
-                [i[0] for i in CONST_BOUNDS_1],
-                [i[1] for i in CONST_BOUNDS_1],
+                [i[0] for i in CONST_BOUNDS],
+                [i[1] for i in CONST_BOUNDS],
             )
             res = least_squares(
                 self.residuals,
