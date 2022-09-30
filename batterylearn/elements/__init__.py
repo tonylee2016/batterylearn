@@ -5,6 +5,7 @@ from .elements import (
     LinearMechanical,
     LinearTimeInvariant,
     Mechanical,
+    SkEstimator,
 )
 
 __author__ = "Xiaojun Li tonylee2016@gmail.com"
@@ -16,4 +17,5 @@ __all__ = [
     "Dynamical",
     "Base",
     "Container",
+    "SkEstimator",
 ]

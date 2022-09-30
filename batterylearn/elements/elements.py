@@ -2,9 +2,13 @@ import logging
 from abc import abstractmethod
 
 import numpy as np
+from sklearn import base
 
 # from ahkab import circuit
 
+class SkEstimator(base.BaseEstimator):
+    def __class_name(self):
+        return 'SkEstimator'
 
 class Base:
     def __init__(self, type, name=""):

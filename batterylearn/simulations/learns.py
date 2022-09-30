@@ -6,15 +6,16 @@ from scipy.optimize import (
     minimize,
     shgo,
 )
-from sklearn.base import BaseEstimator
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
+from sklearn.utils.validation import check_X_y, check_array, check_is_fitted
 
 from .simulations import Simulator
+from batterylearn.elements import SkEstimator
 
 
-class Learner(Simulator, BaseEstimator):
+class Learner(Simulator):
     """
-    a wrapper for model training
+    a wrapper for model training, using scipy.optimize
 
     """
 
@@ -171,3 +172,23 @@ class Learner(Simulator, BaseEstimator):
                 print("rmse", res, len(meas_vt), len(sim_vt))
             return res
         return meas_vt - sim_vt
+
+class LearnerSk(SkEstimator):
+    """wrapper for model training, using sklearn
+
+    Args:
+        SkEstimator (_type_): _description_
+    """
+
+    def __init__(self,parameter = 'demo_param'):
+        self.parameter = parameter
+
+    def fit(self,X,y):
+        X, y = self._validate_data(X, y, accept_sparse=False)
+        self.is_fitted_ = True
+        return self
+    
+    def predict(self,X):
+        X = check_array(X, accept_sparse=False)
+        check_is_fitted(self, 'is_fitted_')
+        return np.ones(X.shape[0], dtype=np.int64)
