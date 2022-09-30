@@ -140,7 +140,11 @@ class LinearMechanical(LinearTimeInvariant):
     """
 
     def __init__(
-        self, K: np.ndarray, C: np.ndarray, M: np.ndarray, x0: np.ndarray = None
+        self,
+        K: np.ndarray,
+        C: np.ndarray,
+        M: np.ndarray,
+        x0: np.ndarray = None,
     ):
         if K.shape != C.shape or K.shape != M.shape:
             ValueError(

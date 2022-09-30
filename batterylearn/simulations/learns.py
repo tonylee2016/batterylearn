@@ -32,7 +32,7 @@ class Learner(Simulator, BaseEstimator):
         config: dict,
         x0: np.ndarray,
         solver: str,
-        bounds:tuple,
+        bounds: tuple,
     ):
         """_summary_
 
@@ -71,14 +71,14 @@ class Learner(Simulator, BaseEstimator):
         )
 
         if solver == "ls":
-            CONST_BOUNDS = (
+            CONST_BOUNDS_1 = (
                 [i[0] for i in CONST_BOUNDS],
                 [i[1] for i in CONST_BOUNDS],
             )
             res = least_squares(
                 self.residuals,
                 p0,
-                bounds=CONST_BOUNDS,
+                bounds=CONST_BOUNDS_1,
                 args=(names, config, x0, solver, bounds),
                 verbose=2,
                 xtol=None,
